@@ -202,7 +202,7 @@
     text-transform: uppercase;
     border: none;
     border-radius: 2px;
-    cursor: none;
+    cursor: pointer;
     transition: opacity 0.3s;
     text-decoration: none;
     display: inline-block;
@@ -219,7 +219,7 @@
     text-transform: uppercase;
     border: 1px solid rgba(255,255,255,0.2);
     border-radius: 2px;
-    cursor: none;
+    cursor: pointer;
     transition: border-color 0.3s, background 0.3s;
     text-decoration: none;
     display: inline-block;
@@ -326,7 +326,7 @@
     grid-template-columns: auto 1fr auto;
     gap: 24px; align-items: start;
     transition: background 0.3s, border-color 0.3s;
-    cursor: none;
+    cursor: default;
   }
   .service-item:hover {
     background: rgba(255,255,255,0.05);
@@ -437,7 +437,7 @@
   }
   .style-card {
     position: relative; overflow: hidden;
-    cursor: none;
+    cursor: default;
   }
   .style-card-bg {
     position: absolute; inset: 0;
@@ -492,80 +492,146 @@
   .style-card:hover .style-link { opacity: 1; transform: translateY(0); }
   .style-link::after { content: '→'; }
 
-  /* ── CONTACT ── */
-  #contact {
-    background: var(--bg2);
-    border-top: 1px solid var(--border);
-  }
+/* ── CONTACT FORM ── */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 14px 20px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  color: var(--white);
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  outline: none;
+  width: 100%;
+  border-radius: 2px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.06);
+}
+
+/* Dropdown Arrow */
+.form-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  color-scheme: dark;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 12px;
+  background-color: rgba(255,255,255,0.04);
+}
+
+/* Push the button down slightly to clear the grid lines */
+.form-submit {
+  margin-top: 32px; 
+  padding: 20px 40px;
+  background: var(--white);
+  color: var(--bg);
+  font-family: 'Syne', sans-serif;
+  font-size: 12px; 
+  font-weight: 700;
+  letter-spacing: 0.2em; 
+  text-transform: uppercase;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255,255,255,0.2);
+}
+
+/* ── CONTACT LAYOUT ── */
+  #contact { background: var(--bg2); border-top: 1px solid var(--border); }
 
   .contact-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 100px; align-items: start;
+    gap: 100px;
+    align-items: start;
   }
-  .contact-left {}
-  .contact-left .section-sub { margin-bottom: 48px; }
 
-  .contact-info { display: flex; flex-direction: column; gap: 2px; }
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .contact-info-item {
-    padding: 20px 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
     border: 1px solid var(--border);
     background: rgba(255,255,255,0.02);
-    display: flex; gap: 16px; align-items: flex-start;
+    border-radius: 2px;
+    transition: background 0.3s;
   }
-  .ci-icon { font-size: 16px; opacity: 0.6; padding-top: 1px; }
-  .ci-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
-  .ci-val { font-size: 14px; color: var(--white); }
+  .contact-info-item:hover { background: rgba(255,255,255,0.04); }
 
-  .contact-form { display: flex; flex-direction: column; gap: 2px; }
-  .form-group { display: flex; flex-direction: column; gap: 2px; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-
-  .form-group label {
-    font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--muted); padding: 12px 20px 0; background: rgba(255,255,255,0.03);
-    border: 1px solid var(--border); border-bottom: none;
-  }
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    padding: 14px 20px 16px;
-    background: rgba(255,255,255,0.03);
+  .ci-icon {
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid var(--border);
-    border-top: none;
-    color: var(--white);
-    font-family: 'Syne', sans-serif;
-    font-size: 14px;
-    outline: none;
-    transition: border-color 0.3s, background 0.3s;
-    resize: none;
-    -webkit-appearance: none;
+    border-radius: 2px;
+    flex-shrink: 0;
+    background: rgba(255,255,255,0.03);
   }
-  .form-group select option { background: #0d1825; }
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
-    border-color: rgba(74,143,204,0.5);
-    background: rgba(74,143,204,0.04);
-  }
-  .form-group input::placeholder,
-  .form-group textarea::placeholder { color: rgba(255,255,255,0.2); }
 
-  .form-submit {
-    margin-top: 2px;
-    padding: 18px 32px;
-    background: var(--white);
-    color: var(--bg);
-    font-family: 'Syne', sans-serif;
-    font-size: 13px; font-weight: 600;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    border: none; cursor: none;
-    transition: opacity 0.3s;
-    text-align: center;
-    display: flex; align-items: center; justify-content: center; gap: 10px;
+  .ci-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
   }
-  .form-submit:hover { opacity: 0.85; }
-  .form-submit::after { content: '→'; font-size: 16px; }
+
+  .ci-val {
+    font-size: 14px;
+    color: var(--white);
+    font-weight: 500;
+  }
 
   /* ── FOOTER ── */
   footer {
@@ -932,53 +998,47 @@
       </div>
     </div>
 
-<div class="contact-form reveal reveal-delay-2">
-  <div class="form-row">
-    <div class="form-group">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" placeholder="John Carter">
+    <div class="contact-form reveal reveal-delay-2">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" placeholder="John Carter">
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="john@brand.com">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="type">Project Type</label>
+        <select id="type">
+          <option value="" disabled selected>Select a service</option>
+          <option>Cinematic Editing</option>
+          <option>Short-Form / Reels</option>
+          <option>Music Video</option>
+          <option>Brand & Corporate</option>
+          <option>Color Grading</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="budget">Budget Range</label>
+        <select id="budget">
+          <option value="" disabled selected>Select your budget</option>
+          <option>Under $500</option>
+          <option>$500 – $1,500</option>
+          <option>$1,500 – $5,000</option>
+          <option>$5,000+</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Project Details</label>
+        <textarea id="message" rows="5" placeholder="Tell us about your project, timeline, and vision..."></textarea>
+      </div>
+      <button class="form-submit">Send Message</button>
     </div>
-
-    <div class="form-group">
-      <label for="email">Email Address</label>
-      <input type="email" id="email" placeholder="john@brand.com">
-    </div>
   </div>
-
-  <div class="form-group">
-    <label for="type">Project Type</label>
-    <select id="type">
-      <option value="" disabled selected>Select a service</option>
-      <option>Cinematic Editing</option>
-      <option>Short-Form / Reels</option>
-      <option>Music Video</option>
-      <option>Brand & Corporate</option>
-      <option>Color Grading</option>
-      <option>Other</option>
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label for="budget">Budget Range</label>
-    <select id="budget">
-      <option value="" disabled selected>Select your budget</option>
-      <option>Under $500</option>
-      <option>$500 – $1,500</option>
-      <option>$1,500 – $5,000</option>
-      <option>$5,000+</option>
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label for="message">Project Details</label>
-    <textarea id="message" rows="5" placeholder="Tell us about your project, timeline, and vision..."></textarea>
-  </div>
-
-  <!-- NEW BUTTON WRAPPER -->
-  <div class="form-submit-wrap">
-    <button class="form-submit">Send Message</button>
-  </div>
-</div>
+</section>
 
 <!-- FOOTER -->
 <footer>
