@@ -1156,6 +1156,58 @@
       }, 3000);
     }
   });
+  // LANGUAGE AUTO-DETECTION
+(function () {
+  const lang = (navigator.language || "en").slice(0, 2);
+
+  const translations = {
+    en: {
+      navHome: "Home",
+      navServices: "Services",
+      navReviews: "Reviews",
+      navStyles: "Styles",
+      navContact: "Get In Touch",
+      heroTag: "Not Just Another Video Editing Agency",
+      heroDesc: "Haxis Media crafts high-impact edits for brands, creators, and productions that demand nothing less than excellence.",
+      btnWork: "View Our Work",
+      btnContact: "Get In Touch"
+    },
+    es: {
+      navHome: "Inicio",
+      navServices: "Servicios",
+      navReviews: "Reseñas",
+      navStyles: "Estilos",
+      navContact: "Contacto",
+      heroTag: "No es solo otra agencia de video",
+      heroDesc: "Haxis Media crea ediciones de alto impacto para marcas y creadores.",
+      btnWork: "Ver trabajos",
+      btnContact: "Contacto"
+    }
+  };
+
+  const t = translations[lang] || translations.en;
+
+  const setText = (selector, value) => {
+    const el = document.querySelector(selector);
+    if (el) el.textContent = value;
+  };
+
+  setText("a[href='#home']", t.navHome);
+  setText("a[href='#services']", t.navServices);
+  setText("a[href='#reviews']", t.navReviews);
+  setText("a[href='#styles']", t.navStyles);
+  setText("a[href='#contact']", t.navContact);
+
+  const heroTag = document.querySelector(".hero-tag");
+  if (heroTag) heroTag.textContent = t.heroTag;
+
+  const heroDesc = document.querySelector(".hero-desc");
+  if (heroDesc) heroDesc.textContent = t.heroDesc;
+
+  const btns = document.querySelectorAll(".hero-actions a");
+  if (btns[0]) btns[0].textContent = t.btnWork;
+  if (btns[1]) btns[1].textContent = t.btnContact;
+})();
 </script>
 </body>
 </html>
