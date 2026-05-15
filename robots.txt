@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://haxismedia.vercel.app/sitemap.xml
