@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="3Ulaa1RvlS3PIYvIetauGnFWUcA2MOc_3b3snBZiEkg" />
 <title>Haxis Media — Video Editing Agency</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="favicon2.png">
-<link rel="apple-touch-icon" href="favicon2.png">  
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 <style>
   :root {
     --navy: #1B3759;
@@ -54,7 +53,7 @@
     pointer-events: none;
     z-index: 9998;
     transform: translate(-50%,-50%);
-    transition: all 0.09s ease;
+    transition: all 0.18s ease;
   }
 
   /* ── NAV ── */
@@ -685,6 +684,219 @@
   @keyframes fadeUp { from { opacity:0; transform: translateY(30px); } to { opacity:1; transform: translateY(0); } }
   @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
+  /* ── TIMELINE ── */
+  #timeline { background: var(--bg2); border-top: 1px solid var(--border); }
+
+  .timeline-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 48px;
+  }
+
+  .tl-preview {
+    width: 100%;
+    aspect-ratio: 16/6;
+    background: #000;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 12px;
+  }
+  .tl-preview-inner {
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, #0a1628 0%, #0d1e2e 100%);
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 10px;
+  }
+  .tl-preview-label {
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .tl-preview-time {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; color: var(--white); letter-spacing: 0.05em;
+  }
+  .tl-preview-bar {
+    width: 80px; height: 2px;
+    background: var(--accent); opacity: 0.6;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:0.3} 50%{opacity:1} }
+
+  /* Timeline shell */
+  .tl-shell {
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.01);
+    border-radius: 2px;
+    overflow: hidden;
+    user-select: none;
+  }
+
+  /* Toolbar row */
+  .tl-toolbar {
+    display: flex; align-items: center; gap: 16px;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+  }
+  .tl-btn {
+    width: 28px; height: 28px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.03);
+    border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; color: var(--muted);
+    cursor: default;
+    flex-shrink: 0;
+  }
+  .tl-timecode {
+    font-family: monospace;
+    font-size: 13px; color: var(--white);
+    letter-spacing: 0.08em;
+    margin-left: auto;
+    background: rgba(0,0,0,0.3);
+    padding: 4px 10px; border-radius: 2px;
+    border: 1px solid var(--border);
+  }
+  .tl-zoom-label {
+    font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* Body: label col + scrollable track area */
+  .tl-body {
+    display: flex;
+  }
+
+  .tl-labels {
+    flex-shrink: 0;
+    width: 130px;
+    border-right: 1px solid var(--border);
+    background: rgba(0,0,0,0.2);
+  }
+  .tl-label-row {
+    height: 44px;
+    display: flex; align-items: center;
+    padding: 0 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    gap: 8px;
+  }
+  .tl-label-row:last-child { border-bottom: none; }
+  .tl-label-dot {
+    width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0;
+  }
+  .tl-label-text {
+    font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); white-space: nowrap; overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Scrollable area */
+  .tl-scroll {
+    flex: 1;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    cursor: grab;
+    position: relative;
+  }
+  .tl-scroll:active { cursor: grabbing; }
+  .tl-scroll::-webkit-scrollbar { height: 6px; }
+  .tl-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,0.02); }
+  .tl-scroll::-webkit-scrollbar-thumb { background: var(--navy-light); border-radius: 3px; }
+
+  .tl-inner {
+    position: relative;
+    /* width set by JS */
+  }
+
+  /* Ruler */
+  .tl-ruler {
+    height: 28px;
+    background: rgba(0,0,0,0.3);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .tl-ruler-mark {
+    position: absolute; top: 0; bottom: 0;
+    display: flex; flex-direction: column; align-items: flex-start;
+    padding-left: 4px;
+  }
+  .tl-ruler-mark-line {
+    width: 1px; height: 8px;
+    background: rgba(255,255,255,0.15);
+    margin-top: 14px;
+  }
+  .tl-ruler-mark-line.major { height: 14px; background: rgba(255,255,255,0.3); margin-top: 8px; }
+  .tl-ruler-label {
+    position: absolute; top: 4px;
+    font-size: 9px; color: rgba(255,255,255,0.4);
+    letter-spacing: 0.05em; white-space: nowrap;
+    margin-left: 4px;
+  }
+
+  /* Tracks */
+  .tl-tracks { position: relative; }
+  .tl-track-row {
+    height: 44px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    position: relative;
+  }
+  .tl-track-row:last-child { border-bottom: none; }
+
+  .tl-clip {
+    position: absolute; top: 6px; bottom: 6px;
+    border-radius: 2px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.12);
+    display: flex; align-items: center;
+    padding: 0 8px;
+    transition: filter 0.15s;
+  }
+  .tl-clip:hover { filter: brightness(1.2); }
+  .tl-clip-label {
+    font-size: 9px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: rgba(255,255,255,0.85);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    pointer-events: none;
+  }
+  /* Clip stripe pattern overlay */
+  .tl-clip::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(
+      90deg, transparent, transparent 8px,
+      rgba(255,255,255,0.04) 8px, rgba(255,255,255,0.04) 9px
+    );
+    pointer-events: none;
+  }
+
+  /* Playhead */
+  .tl-playhead {
+    position: absolute; top: 0; bottom: 0;
+    width: 2px;
+    background: #fff;
+    pointer-events: none;
+    z-index: 10;
+  }
+  .tl-playhead::before {
+    content: '';
+    position: absolute; top: -1px; left: 50%;
+    transform: translateX(-50%);
+    width: 10px; height: 10px;
+    background: #fff;
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+  }
+
+  /* Hover scrub line */
+  .tl-hover-line {
+    position: absolute; top: 0; bottom: 0;
+    width: 1px;
+    background: rgba(255,255,255,0.2);
+    pointer-events: none;
+    z-index: 9;
+    display: none;
+  }
+
   @media (max-width: 1024px) {
     nav, section, footer { padding-left: 32px; padding-right: 32px; }
     #home { padding: 0 32px 80px; }
@@ -759,7 +971,7 @@
     </div>
   </div>
 
-  <div class="hero-tag">Not Just Another Video Editing Agency</div>
+  <div class="hero-tag">Video Editing Agency</div>
   <h1 class="hero-headline">We Turn Raw<br>Footage Into<br><em>Cinematic Stories</em></h1>
   <div class="hero-sub-row">
     <p class="hero-desc">Haxis Media crafts high-impact edits for brands, creators, and productions that demand nothing less than excellence.</p>
@@ -966,6 +1178,68 @@
   </div>
 </section>
 
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="timeline-header reveal">
+    <div>
+      <div class="section-tag">Our Workflow</div>
+      <h2 class="section-title">Inside The Edit</h2>
+    </div>
+    <p class="section-sub reveal reveal-delay-2" style="max-width:340px;">A look at how a typical Haxis Media project is structured — layer by layer, from raw cut to final delivery.</p>
+  </div>
+
+  <!-- Preview monitor -->
+  <div class="tl-preview reveal reveal-delay-1">
+    <div class="tl-preview-inner">
+      <div class="tl-preview-label">Preview Monitor</div>
+      <div class="tl-preview-time" id="tlPreviewTime">00:00:00:00</div>
+      <div class="tl-preview-bar"></div>
+    </div>
+  </div>
+
+  <!-- Timeline shell -->
+  <div class="tl-shell reveal reveal-delay-2">
+
+    <!-- Toolbar -->
+    <div class="tl-toolbar">
+      <div class="tl-btn">⏮</div>
+      <div class="tl-btn">▶</div>
+      <div class="tl-btn">⏭</div>
+      <div class="tl-btn">✂</div>
+      <div class="tl-btn">🔍</div>
+      <span class="tl-zoom-label">Scroll to scrub · Drag to pan</span>
+      <div class="tl-timecode" id="tlTimecode">00:00:00:00</div>
+    </div>
+
+    <!-- Body -->
+    <div class="tl-body">
+
+      <!-- Layer labels -->
+      <div class="tl-labels">
+        <div class="tl-label-row" style="height:28px; border-bottom:1px solid var(--border);"></div><!-- ruler spacer -->
+        <div class="tl-label-row"><div class="tl-label-dot" style="background:#4A8FCC;"></div><span class="tl-label-text">Video A</span></div>
+        <div class="tl-label-row"><div class="tl-label-dot" style="background:#3a7abf;"></div><span class="tl-label-text">Video B</span></div>
+        <div class="tl-label-row"><div class="tl-label-dot" style="background:#2ecc8a;"></div><span class="tl-label-text">Color Grade</span></div>
+        <div class="tl-label-row"><div class="tl-label-dot" style="background:#e8a83a;"></div><span class="tl-label-text">Titles / GFX</span></div>
+        <div class="tl-label-row"><div class="tl-label-dot" style="background:#cc4a6a;"></div><span class="tl-label-text">Music</span></div>
+        <div class="tl-label-row"><div class="tl-label-dot" style="background:#9b6acc;"></div><span class="tl-label-text">SFX / Foley</span></div>
+        <div class="tl-label-row"><div class="tl-label-dot" style="background:#4acc9b;"></div><span class="tl-label-text">Dialogue</span></div>
+      </div>
+
+      <!-- Scrollable track area -->
+      <div class="tl-scroll" id="tlScroll">
+        <div class="tl-inner" id="tlInner">
+          <div class="tl-ruler" id="tlRuler"></div>
+          <div class="tl-tracks" id="tlTracks"></div>
+          <div class="tl-playhead" id="tlPlayhead"></div>
+          <div class="tl-hover-line" id="tlHoverLine"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="contact-layout">
@@ -979,7 +1253,7 @@
           <div class="ci-icon">✉</div>
           <div>
             <div class="ci-label">Email</div>
-            <div class="ci-val">haxismedia@gmail.com</div>
+            <div class="ci-val">hello@haxismedia.com</div>
           </div>
         </div>
         <div class="contact-info-item">
@@ -1051,7 +1325,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Haxis<span>.</span>Media</div>
-  <div class="footer-copy">© 2026 Haxis Media. All rights reserved.</div>
+  <div class="footer-copy">© 2025 Haxis Media. All rights reserved.</div>
   <div class="footer-links">
     <a href="#home">Home</a>
     <a href="#services">Services</a>
@@ -1156,58 +1430,128 @@
       }, 3000);
     }
   });
-  // LANGUAGE AUTO-DETECTION
-(function () {
-  const lang = (navigator.language || "en").slice(0, 2);
 
-  const translations = {
-    en: {
-      navHome: "Home",
-      navServices: "Services",
-      navReviews: "Reviews",
-      navStyles: "Styles",
-      navContact: "Get In Touch",
-      heroTag: "Not Just Another Video Editing Agency",
-      heroDesc: "Haxis Media crafts high-impact edits for brands, creators, and productions that demand nothing less than excellence.",
-      btnWork: "View Our Work",
-      btnContact: "Get In Touch"
-    },
-    es: {
-      navHome: "Inicio",
-      navServices: "Servicios",
-      navReviews: "Reseñas",
-      navStyles: "Estilos",
-      navContact: "Contacto",
-      heroTag: "No es solo otra agencia de video",
-      heroDesc: "Haxis Media crea ediciones de alto impacto para marcas y creadores.",
-      btnWork: "Ver trabajos",
-      btnContact: "Contacto"
+  // ── TIMELINE ──
+  (function() {
+    const PX_PER_SEC = 80;
+    const TOTAL_SECS = 90;
+    const FPS = 24;
+
+    const scroll    = document.getElementById('tlScroll');
+    const inner     = document.getElementById('tlInner');
+    const ruler     = document.getElementById('tlRuler');
+    const tracks    = document.getElementById('tlTracks');
+    const playhead  = document.getElementById('tlPlayhead');
+    const hoverLine = document.getElementById('tlHoverLine');
+    const timecode  = document.getElementById('tlTimecode');
+    const previewT  = document.getElementById('tlPreviewTime');
+
+    if (!scroll) return;
+
+    const totalPx = TOTAL_SECS * PX_PER_SEC;
+    inner.style.width = totalPx + 'px';
+
+    function fmt(s) {
+      const h  = Math.floor(s / 3600);
+      const m  = Math.floor((s % 3600) / 60);
+      const sc = Math.floor(s % 60);
+      const f  = Math.floor((s % 1) * FPS);
+      return [h,m,sc,f].map(n => String(n).padStart(2,'0')).join(':');
     }
-  };
 
-  const t = translations[lang] || translations.en;
+    for (let s = 0; s <= TOTAL_SECS; s += 5) {
+      const major = s % 10 === 0;
+      const mark = document.createElement('div');
+      mark.className = 'tl-ruler-mark';
+      mark.style.left = (s * PX_PER_SEC) + 'px';
+      const line = document.createElement('div');
+      line.className = 'tl-ruler-mark-line' + (major ? ' major' : '');
+      mark.appendChild(line);
+      if (major) {
+        const lbl = document.createElement('div');
+        lbl.className = 'tl-ruler-label';
+        lbl.textContent = fmt(s);
+        mark.appendChild(lbl);
+      }
+      ruler.appendChild(mark);
+    }
 
-  const setText = (selector, value) => {
-    const el = document.querySelector(selector);
-    if (el) el.textContent = value;
-  };
+    const trackData = [
+      { color:'#1c4a7a', clips:[[0,22,'Opening Cut'],[23,18,'Interview A'],[44,26,'B-Roll Sequence'],[72,18,'Closing Shot']] },
+      { color:'#163d6e', clips:[[5,15,'Cutaway 1'],[38,12,'Insert B'],[55,20,'B-Roll Alt']] },
+      { color:'#1a6644', clips:[[0,90,'Color Grade']] },
+      { color:'#7a5a10', clips:[[2,8,'Intro Title'],[30,6,'Lower Third'],[60,10,'End Card']] },
+      { color:'#7a1a30', clips:[[0,90,'Soundtrack']] },
+      { color:'#4a2880', clips:[[4,3,'Hit'],[22,2,'Whoosh'],[44,3,'Transition'],[72,4,'Impact']] },
+      { color:'#106644', clips:[[1,21,'Speaker A'],[23,17,'Speaker B'],[44,25,'Speaker A'],[71,18,'Speaker B']] },
+    ];
 
-  setText("a[href='#home']", t.navHome);
-  setText("a[href='#services']", t.navServices);
-  setText("a[href='#reviews']", t.navReviews);
-  setText("a[href='#styles']", t.navStyles);
-  setText("a[href='#contact']", t.navContact);
+    trackData.forEach((td) => {
+      const row = document.createElement('div');
+      row.className = 'tl-track-row';
+      td.clips.forEach(([start, dur, label]) => {
+        const clip = document.createElement('div');
+        clip.className = 'tl-clip';
+        clip.style.left  = (start * PX_PER_SEC) + 'px';
+        clip.style.width = (dur * PX_PER_SEC - 2) + 'px';
+        clip.style.background = td.color;
+        const lbl = document.createElement('div');
+        lbl.className = 'tl-clip-label';
+        lbl.textContent = label;
+        clip.appendChild(lbl);
+        row.appendChild(clip);
+      });
+      tracks.appendChild(row);
+    });
 
-  const heroTag = document.querySelector(".hero-tag");
-  if (heroTag) heroTag.textContent = t.heroTag;
+    function updatePlayhead(sec) {
+      sec = Math.max(0, Math.min(TOTAL_SECS, sec));
+      const x = sec * PX_PER_SEC;
+      playhead.style.left = x + 'px';
+      const tc = fmt(sec);
+      timecode.textContent = tc;
+      if (previewT) previewT.textContent = tc;
+    }
 
-  const heroDesc = document.querySelector(".hero-desc");
-  if (heroDesc) heroDesc.textContent = t.heroDesc;
+    updatePlayhead(0);
 
-  const btns = document.querySelectorAll(".hero-actions a");
-  if (btns[0]) btns[0].textContent = t.btnWork;
-  if (btns[1]) btns[1].textContent = t.btnContact;
-})();
+    scroll.addEventListener('scroll', () => {
+      const ratio = scroll.scrollLeft / Math.max(1, totalPx - scroll.clientWidth);
+      updatePlayhead(ratio * TOTAL_SECS);
+    });
+
+    scroll.addEventListener('mousemove', (e) => {
+      const rect = scroll.getBoundingClientRect();
+      const x = e.clientX - rect.left + scroll.scrollLeft;
+      hoverLine.style.left = x + 'px';
+      hoverLine.style.display = 'block';
+    });
+    scroll.addEventListener('mouseleave', () => { hoverLine.style.display = 'none'; });
+
+    scroll.addEventListener('click', (e) => {
+      const rect = scroll.getBoundingClientRect();
+      const x = e.clientX - rect.left + scroll.scrollLeft;
+      updatePlayhead(x / PX_PER_SEC);
+      scroll.scrollLeft = Math.max(0, x - scroll.clientWidth / 2);
+    });
+
+    let isDragging = false, startX, startScrollLeft;
+    scroll.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      startX = e.pageX - scroll.offsetLeft;
+      startScrollLeft = scroll.scrollLeft;
+      scroll.style.cursor = 'grabbing';
+    });
+    scroll.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      const x = e.pageX - scroll.offsetLeft;
+      scroll.scrollLeft = startScrollLeft - (x - startX);
+    });
+    ['mouseup','mouseleave'].forEach(ev => scroll.addEventListener(ev, () => {
+      isDragging = false;
+      scroll.style.cursor = 'grab';
+    }));
+  })();
 </script>
 </body>
 </html>
