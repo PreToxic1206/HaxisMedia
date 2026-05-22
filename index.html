@@ -659,6 +659,23 @@
     color: var(--muted); text-decoration: none; transition: color 0.3s;
   }
   .footer-links a:hover { color: var(--white); }
+  /* Fix default link color behavior */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+a:hover {
+  color: inherit;
+}
+
+a:active {
+  color: inherit;
+}
 
   /* ── REVEAL ANIMATIONS ── */
   .reveal {
