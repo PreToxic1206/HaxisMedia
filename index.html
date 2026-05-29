@@ -29,7 +29,6 @@
     background: var(--bg);
     color: var(--white);
     overflow-x: hidden;
-    cursor: none;
   }
   body.modal-open { overflow: hidden; }
 
@@ -63,8 +62,7 @@
   }
   nav.scrolled {
     padding: 18px 60px;
-    background: rgba(8,15,24,0.85);
-    backdrop-filter: blur(20px);
+    background: rgba(8,15,24,0.96);
     border-bottom: 1px solid var(--border);
   }
   .nav-logo {
@@ -110,7 +108,7 @@
                 linear-gradient(160deg, #080f18 0%, #0d1e2e 50%, #080f18 100%);
     z-index: 0;
   }
-  .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.18; animation: drift 12s ease-in-out infinite; }
+  .orb { position: absolute; border-radius: 50%; opacity: 0.14; animation: drift 16s ease-in-out infinite; }
   .orb1 { width: 600px; height: 600px; background: var(--navy); top: -10%; right: 5%; animation-delay: 0s; }
   .orb2 { width: 400px; height: 400px; background: var(--accent); top: 30%; right: 20%; animation-delay: -4s; opacity: 0.1; }
   .orb3 { width: 300px; height: 300px; background: var(--navy-light); bottom: 10%; left: 10%; animation-delay: -8s; }
@@ -179,7 +177,7 @@
     display: flex; flex-direction: column; gap: 2px;
     animation: fadeIn 0.9s ease 1s both;
   }
-  .stat-item { padding: 20px 28px; border: 1px solid var(--border); background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); }
+  .stat-item { padding: 20px 28px; border: 1px solid var(--border); background: rgba(255,255,255,0.05); }
   .stat-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; line-height: 1; color: var(--white); }
   .stat-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
   .scroll-hint {
@@ -796,9 +794,11 @@
 <script>
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
+  const canUseCustomCursor = window.matchMedia('(pointer: fine)').matches && window.innerWidth > 900;
   let mx = 0, my = 0, rx = 0, ry = 0;
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-  if (cursor && ring) {
+  if (cursor && ring && canUseCustomCursor) {
+    document.body.style.cursor = 'none';
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; }, { passive: true });
     cursor.style.display = 'block';
     ring.style.display = 'block';
     function animateCursor() {
@@ -811,12 +811,21 @@
       requestAnimationFrame(animateCursor);
     }
     animateCursor();
+  } else if (cursor && ring) {
+    cursor.style.display = 'none';
+    ring.style.display = 'none';
   }
 
   const navbar = document.getElementById('navbar');
+  let navScrollTicking = false;
   window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 60);
-  });
+    if (navScrollTicking) return;
+    navScrollTicking = true;
+    requestAnimationFrame(() => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+      navScrollTicking = false;
+    });
+  }, { passive: true });
 
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver(entries => {
