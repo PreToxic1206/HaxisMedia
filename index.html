@@ -299,17 +299,24 @@
     position: fixed;
     inset: 0;
     z-index: 3000;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     padding: 28px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.18s ease, visibility 0.18s ease;
   }
-  .style-modal.active { display: flex; }
+  .style-modal.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
   .style-modal-backdrop {
     position: absolute;
     inset: 0;
-    background: rgba(3, 8, 14, 0.82);
-    backdrop-filter: blur(18px);
+    background: rgba(3, 8, 14, 0.92);
   }
   .style-modal-window {
     position: relative;
@@ -320,7 +327,11 @@
     border: 1px solid rgba(255,255,255,0.12);
     padding: 42px;
     box-shadow: 0 30px 90px rgba(0,0,0,0.45);
+    transform: translateY(12px) scale(0.98);
+    transition: transform 0.18s ease;
+    will-change: transform;
   }
+  .style-modal.active .style-modal-window { transform: translateY(0) scale(1); }
   .style-modal-close {
     position: sticky;
     top: 0;
@@ -859,6 +870,7 @@
   const modalTitle = document.getElementById('modalTitle');
   const modalDesc = document.getElementById('modalDesc');
   const modalVideos = document.getElementById('modalVideos');
+  let videoRenderTimer;
 
   function openStyleModal(styleKey) {
     const item = styleData[styleKey];
@@ -866,24 +878,30 @@
     modalTag.textContent = item.tag;
     modalTitle.textContent = item.title;
     modalDesc.textContent = item.desc;
-    modalVideos.innerHTML = item.videos.map(video => `
-      <div class="video-card">
-        <video controls preload="none" poster="${video.poster}">
-          <source src="${video.src}" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="video-caption">${video.title}</div>
-      </div>
-    `).join('');
+    modalVideos.innerHTML = '';
     styleModal.classList.add('active');
     styleModal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('modal-open');
+
+    clearTimeout(videoRenderTimer);
+    videoRenderTimer = setTimeout(() => {
+      modalVideos.innerHTML = item.videos.map(video => `
+        <div class="video-card">
+          <video controls preload="none" poster="${video.poster}">
+            <source src="${video.src}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-caption">${video.title}</div>
+        </div>
+      `).join('');
+    }, 120);
   }
 
   function closeStyleModal() {
     styleModal.classList.remove('active');
     styleModal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('modal-open');
+    clearTimeout(videoRenderTimer);
     modalVideos.querySelectorAll('video').forEach(video => {
       video.pause();
       video.currentTime = 0;
