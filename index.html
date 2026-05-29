@@ -2068,13 +2068,13 @@
           videos: [
             {
               title: "Cinematic Sample 01",
-              src: "videos/cinematic-1.mp4",
-              poster: "videos/cinematic-1-poster.jpg",
+              iframe:
+                '<iframe width="560" height="315" src="PASTE_YOUR_YOUTUBE_EMBED_LINK_HERE" title="Cinematic Sample 01" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
             },
             {
               title: "Cinematic Sample 02",
-              src: "videos/cinematic-2.mp4",
-              poster: "videos/cinematic-2-poster.jpg",
+              iframe:
+                '<iframe width="560" height="315" src="PASTE_YOUR_YOUTUBE_EMBED_LINK_HERE" title="Cinematic Sample 02" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
             },
           ],
         },
@@ -2085,13 +2085,13 @@
           videos: [
             {
               title: "Commercial Sample 01",
-              src: "videos/commercial-1.mp4",
-              poster: "videos/commercial-1-poster.jpg",
+              iframe:
+                '<iframe width="560" height="315" src="https://www.youtube.com/embed/3zn-JLcYE1Q?si=xfqpyhrAEHXx2faq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
             },
             {
               title: "Commercial Sample 02",
-              src: "videos/commercial-2.mp4",
-              poster: "videos/commercial-2-poster.jpg",
+              iframe:
+                '<iframe width="560" height="315" src="PASTE_YOUR_YOUTUBE_EMBED_LINK_HERE" title="Commercial Sample 02" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
             },
           ],
         },
@@ -2102,13 +2102,13 @@
           videos: [
             {
               title: "Reels Sample 01",
-              src: "videos/reels-1.mp4",
-              poster: "videos/reels-1-poster.jpg",
+              iframe:
+                '<iframe width="560" height="315" src="PASTE_YOUR_YOUTUBE_EMBED_LINK_HERE" title="Reels Sample 01" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
             },
             {
               title: "Reels Sample 02",
-              src: "videos/reels-2.mp4",
-              poster: "videos/reels-2-poster.jpg",
+              iframe:
+                '<iframe width="560" height="315" src="PASTE_YOUR_YOUTUBE_EMBED_LINK_HERE" title="Reels Sample 02" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
             },
           ],
         },
@@ -2119,13 +2119,13 @@
           videos: [
             {
               title: "Documentary Sample 01",
-              src: "videos/documentary-1.mp4",
-              poster: "videos/documentary-1-poster.jpg",
+              iframe:
+                '<iframe width="560" height="315" src="PASTE_YOUR_YOUTUBE_EMBED_LINK_HERE" title="Documentary Sample 01" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
             },
             {
               title: "Documentary Sample 02",
-              src: "videos/documentary-2.mp4",
-              poster: "videos/documentary-2-poster.jpg",
+              iframe:
+                '<iframe width="560" height="315" src="PASTE_YOUR_YOUTUBE_EMBED_LINK_HERE" title="Documentary Sample 02" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
             },
           ],
         },
@@ -2155,10 +2155,7 @@
             .map(
               (video) => `
         <div class="video-card">
-          <video controls preload="none" poster="${video.poster}">
-            <source src="${video.src}" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+          ${video.iframe}
           <div class="video-caption">${video.title}</div>
         </div>
       `,
