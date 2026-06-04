@@ -1466,6 +1466,17 @@
     </style>
   </head>
   <body>
+    <div class="video-background">
+  <!-- 
+    preload="auto" tells the browser to start downloading the video immediately
+    playsinline prevents iOS devices from popping the video into a native media player
+  -->
+  <video autoplay muted loop playsinline preload="auto">
+    <source src="/haxisbgloop2.gif" type="video/gif">
+    <!-- Note: If you put it in an assets folder, use src="/assets/hero-loop.mp4" instead -->
+  </video>
+  <div class="video-overlay"></div>
+</div>
     <div class="cursor" id="cursor"></div>
     <div class="cursor-ring" id="cursorRing"></div>
 
