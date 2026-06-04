@@ -1463,11 +1463,39 @@
       .form-submit * {
         color: #080f18 !important;
       }
+      /* for new background */ 
+      .video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.video-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.18; /* Soft low opacity so text pops */
+  pointer-events: none;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(8, 15, 24, 0.4); /* Matches your --bg color */
+  z-index: -1;
+}
     </style>
   </head>
   <body>
-    <div class="video-background">
-  <!-- If using a GIF, use an img tag instead -->
+  
+    <div class="video-background"> 
   <img src="/haxisbgloop2.gif" alt="Background Loop">
   <div class="video-overlay"></div>
 </div>
