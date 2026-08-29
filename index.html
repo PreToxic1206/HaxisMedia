@@ -692,7 +692,20 @@
           padding: 12px 0;
         }
       }
-      .services-list { border-top: 1px solid var(--line); }
+      .services-list { 
+        border-top: 1px solid var(--line);
+        min-height: 420px;
+      }
+      @media (max-width: 1100px) {
+        .services-list {
+          min-height: 440px;
+        }
+      }
+      @media (max-width: 600px) {
+        .services-list {
+          min-height: 480px;
+        }
+      }
       .service-row {
         display: flex;
         flex-direction: column;
