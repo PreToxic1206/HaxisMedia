@@ -1,4 +1,9 @@
+# Robots.txt for Haxis Media
 User-agent: *
 Allow: /
 
-Sitemap: https://haxismedia.vercel.app/sitemap.xml
+# Sitemap Location
+Sitemap: https://haxismedia.com/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1

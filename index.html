@@ -3,1834 +3,1422 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Haxis Media - Video Editing Agency</title>
+    <title>Haxis Media | Premier Video Editing Studio & Visual Storytelling</title>
+    <meta name="description" content="Haxis Media is an elite video editing studio for brands and creators, offering cinematic editing, short-form content, color grading, music videos, sound design, and creative direction." />
+    <meta name="keywords" content="video editing studio, video editor for creators, cinematic video editing, short form content editing, reels editor, youtube video editor, color grading studio, sound design, haxis media" />
+    <meta name="author" content="Haxis Media" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="theme-color" content="#0d1e30" />
+    <link rel="canonical" href="https://haxismedia.com/" />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:site_name" content="Haxis Media" />
+    <meta property="og:title" content="Haxis Media | Premier Video Editing Studio" />
+    <meta property="og:description" content="Story-driven video editing for brands and content creators: cinematic cuts, short-form content, color grading, and sound design." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://haxismedia.com/" />
+    <meta property="og:image" content="https://haxismedia.com/logo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Haxis Media | Video Editing Studio" />
+    <meta name="twitter:description" content="Cinematic video editing and visual storytelling for creators & brands." />
+    <meta name="twitter:image" content="https://haxismedia.com/logo.png" />
+
+    <link rel="manifest" href="site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Syne:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="apple-touch-icon" href="favicon.png" />
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="apple-touch-icon" href="logo.png" />
+
+    <!-- Structured Data JSON-LD for Google Search Ranking -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Haxis Media",
+      "url": "https://haxismedia.com",
+      "logo": "https://haxismedia.com/logo.png",
+      "image": "https://haxismedia.com/logo.png",
+      "description": "Haxis Media is a video editing studio for brands and creators, offering cinematic editing, short-form content, color grading, music videos, and sound design.",
+      "email": "haxismedia@gmail.com",
+      "priceRange": "$$$",
+      "sameAs": [
+        "https://www.linkedin.com/company/haxismedia/",
+        "https://instagram.com/haxismedia"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "98"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Video Production & Creative Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Cinematic Video Editing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Short-Form / Reels & Shorts Content"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Color Grading & Motion Graphics"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sound Design & Audio Engineering"
+            }
+          }
+        ]
+      }
+    }
+    </script>
     <style>
       :root {
-        --navy: #1b3759;
-        --navy-light: #2a4f7a;
-        --navy-deep: #0d1e2e;
-        --white: #ffffff;
-        --off-white: #e8edf2;
-        --muted: rgba(255, 255, 255, 0.45);
-        --border: rgba(255, 255, 255, 0.08);
-        --bg: #080f18;
-        --bg2: #0d1825;
-        --accent: #4a8fcc;
+        --paper: #0d1e30;
+        --ink: #f2f6fb;
+        --ink-soft: rgba(242, 246, 251, 0.68);
+        --mute: rgba(242, 246, 251, 0.45);
+        --line: rgba(242, 246, 251, 0.14);
+        --red: #4a8fcc;
+        --red-deep: #2f6fb0;
+        --dark: #081420;
+        --dark-line: rgba(242, 246, 251, 0.14);
+        --dark-mute: rgba(242, 246, 251, 0.5);
       }
-
-      *,
-      *::before,
-      *::after {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      html {
+      * , *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+      html { 
         scroll-behavior: smooth;
       }
+      html.lenis, html.lenis body {
+        height: auto;
+      }
+      .lenis.lenis-smooth {
+        scroll-behavior: auto !important;
+      }
+      .lenis.lenis-smooth [data-lenis-prevent] {
+        overscroll-behavior: contain;
+      }
+      .lenis.lenis-stopped {
+        overflow: hidden;
+      }
       body {
-        font-family: "Syne", sans-serif;
-        background: var(--bg);
-        color: var(--white);
+        font-family: "Inter", sans-serif;
+        background: var(--paper);
+        color: var(--ink);
         overflow-x: hidden;
       }
-      body.modal-open {
-        overflow: hidden;
+      body.modal-open { overflow: hidden; }
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 2000;
+        opacity: 0.025;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+      a { color: inherit; }
+      img { max-width: 100%; display: block; }
+      .mono { font-family: "JetBrains Mono", monospace; }
+      .serif { font-family: "Fraunces", serif; }
+
+      :focus-visible {
+        outline: 2px solid var(--red);
+        outline-offset: 2px;
       }
 
-      .cursor {
-        width: 10px;
-        height: 10px;
-        background: var(--white);
-        border-radius: 50%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        pointer-events: none;
-        z-index: 9999;
-        transform: translate(-50%, -50%);
-        transition: transform 0.1s ease;
+      .hero-headline, .section-title, .style-modal-title {
+        text-wrap: balance;
       }
-      .cursor-ring {
-        width: 36px;
-        height: 36px;
-        border: 1px solid rgba(255, 255, 255, 0.4);
-        border-radius: 50%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        pointer-events: none;
-        z-index: 9998;
-        transform: translate(-50%, -50%);
-        transition: all 0.18s ease;
+      .hero-desc, .section-sub, .service-desc, .style-desc, .review-text {
+        text-wrap: pretty;
       }
 
+      .wrap { max-width: 1180px; margin: 0 auto; padding: 0 48px; }
+      @media (max-width: 1024px) { .wrap { padding: 0 32px; } }
+      @media (max-width: 640px) { .wrap { padding: 0 20px; } }
+
+      /* --- Nav (Frosted Glass Blur Effect) --- */
       nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
+        position: absolute !important;
+        top: 0 !important; left: 0 !important; right: 0 !important;
         z-index: 1000;
-        padding: 28px 60px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        transition:
-          padding 0.4s ease,
-          background 0.4s ease;
+        padding: 0 48px;
+        height: 80px;
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        background: rgba(13, 30, 48, 0.65);
+        backdrop-filter: blur(14px) saturate(180%);
+        -webkit-backdrop-filter: blur(14px) saturate(180%);
+        border-bottom: 1px solid rgba(242, 246, 251, 0.1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
       }
       nav.scrolled {
-        padding: 18px 60px;
-        background: rgba(8, 15, 24, 0.96);
-        border-bottom: 1px solid var(--border);
+        padding: 0 48px;
+        height: 70px;
+        background: rgba(8, 20, 32, 0.85);
+        backdrop-filter: blur(18px) saturate(200%);
+        -webkit-backdrop-filter: blur(18px) saturate(200%);
+        border-bottom: 1px solid rgba(242, 246, 251, 0.15);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
       }
       .nav-logo {
-        font-family: "Playfair Display", serif;
-        font-size: 20px;
-        font-weight: 700;
-        letter-spacing: 0.02em;
-        color: var(--white);
-        text-decoration: none;
-      }
-      .nav-logo span {
-        color: var(--accent);
-      }
-      .nav-links {
         display: flex;
-        gap: 40px;
-        list-style: none;
         align-items: center;
-      }
-      .nav-links a {
-        font-size: 13px;
-        font-weight: 500;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--muted);
         text-decoration: none;
-        transition: color 0.3s;
+        line-height: 0;
+        margin: 0;
       }
-      .nav-links a:hover {
-        color: var(--white);
-      }
-      .nav-cta {
-        padding: 10px 24px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        color: var(--white) !important;
-        border-radius: 2px;
-        transition: background 0.3s !important;
-      }
-      .nav-cta:hover {
-        background: rgba(255, 255, 255, 0.08) !important;
-      }
-
-      #home {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding: 0 60px 100px;
-        position: relative;
-        overflow: hidden;
-      }
-      .hero-bg {
-        position: absolute;
-        inset: 0;
-        background:
-          radial-gradient(
-            ellipse 80% 60% at 70% 40%,
-            rgba(27, 55, 89, 0.55) 0%,
-            transparent 65%
-          ),
-          radial-gradient(
-            ellipse 50% 50% at 20% 70%,
-            rgba(74, 143, 204, 0.15) 0%,
-            transparent 60%
-          ),
-          linear-gradient(160deg, rgba(8, 15, 24, 0.6) 0%, rgba(13, 30, 46, 0.6) 50%, rgba(8, 15, 24, 0.6) 100%);
-        z-index: 0;
-      }
-      .orb {
-        position: absolute;
-        border-radius: 50%;
-        opacity: 0.14;
-        animation: drift 16s ease-in-out infinite;
-      }
-      .orb1 {
-        width: 600px;
-        height: 600px;
-        background: var(--navy);
-        top: -10%;
-        right: 5%;
-        animation-delay: 0s;
-      }
-      .orb2 {
-        width: 400px;
-        height: 400px;
-        background: var(--accent);
-        top: 30%;
-        right: 20%;
-        animation-delay: -4s;
-        opacity: 0.1;
-      }
-      .orb3 {
-        width: 300px;
-        height: 300px;
-        background: var(--navy-light);
-        bottom: 10%;
-        left: 10%;
-        animation-delay: -8s;
-      }
-      @keyframes drift {
-        0%,
-        100% {
-          transform: translate(0, 0) scale(1);
-        }
-        33% {
-          transform: translate(30px, -20px) scale(1.05);
-        }
-        66% {
-          transform: translate(-20px, 30px) scale(0.97);
-        }
-      }
-      .hero-bg::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-        opacity: 0.35;
-        pointer-events: none;
-      }
-      .hero-tag,
-      .section-tag {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--accent);
-      }
-      .hero-tag {
-        position: relative;
-        z-index: 1;
-        margin-bottom: 32px;
-        animation: fadeUp 0.8s ease 0.3s both;
-      }
-      .hero-tag::before,
-      .section-tag::before {
-        content: "";
-        width: 24px;
-        height: 1px;
-        background: var(--accent);
+      .logo-img {
+        height: 56px;
+        width: auto;
         display: block;
+        object-fit: contain;
+        transition: transform 0.3s ease, opacity 0.3s ease;
       }
-      .hero-headline {
-        position: relative;
-        z-index: 1;
-        font-family: "Playfair Display", serif;
-        font-size: clamp(52px, 7vw, 110px);
-        font-weight: 900;
-        line-height: 0.95;
-        letter-spacing: -0.02em;
-        color: var(--white);
-        max-width: 900px;
-        margin-bottom: 32px;
-        animation: fadeUp 0.9s ease 0.5s both;
+      .nav-logo:hover .logo-img {
+        transform: scale(1.05);
+        opacity: 0.9;
       }
-      .hero-headline em {
-        font-style: italic;
-        color: var(--off-white);
-        opacity: 0.7;
-      }
-      .hero-sub-row {
-        position: relative;
-        z-index: 1;
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        gap: 40px;
-        animation: fadeUp 0.9s ease 0.7s both;
-      }
-      .hero-desc {
-        font-size: 15px;
-        line-height: 1.7;
-        color: var(--muted);
-        max-width: 420px;
-      }
-      .hero-actions {
-        display: flex;
-        gap: 16px;
-        align-items: center;
-        flex-shrink: 0;
-      }
-      .btn-primary,
-      .btn-ghost {
-        padding: 14px 32px;
-        font-family: "Syne", sans-serif;
-        font-size: 13px;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        border-radius: 2px;
-        cursor: pointer;
-        text-decoration: none;
-        display: inline-block;
-      }
-      .btn-primary {
-        background: var(--white);
-        color: var(--bg);
-        border: none;
-        transition: opacity 0.3s;
-      }
-      .btn-primary:hover {
-        opacity: 0.85;
-      }
-      .btn-ghost {
-        background: transparent;
-        color: var(--white);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        transition:
-          border-color 0.3s,
-          background 0.3s;
-      }
-      .btn-ghost:hover {
-        border-color: rgba(255, 255, 255, 0.5);
-        background: rgba(255, 255, 255, 0.05);
-      }
-      .hero-stats {
+      .nav-center {
         position: absolute;
-        right: 60px;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-        animation: fadeIn 0.9s ease 1s both;
-      }
-      .stat-item {
-        padding: 20px 28px;
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.05);
-      }
-      .stat-num {
-        font-family: "Playfair Display", serif;
-        font-size: 36px;
-        font-weight: 700;
-        line-height: 1;
-        color: var(--white);
-      }
-      .stat-label {
-        font-size: 11px;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--muted);
-        margin-top: 4px;
-      }
-      .scroll-hint {
-        position: absolute;
-        bottom: 40px;
         left: 50%;
         transform: translateX(-50%);
-        z-index: 1;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        font-size: 10px;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: var(--muted);
+        gap: 36px;
+        list-style: none;
       }
-      .scroll-line {
-        width: 1px;
-        height: 50px;
-        background: linear-gradient(
-          to bottom,
-          rgba(255, 255, 255, 0.3),
-          transparent
-        );
-        animation: scrollPulse 2s ease-in-out infinite;
-      }
-      @keyframes scrollPulse {
-        0%,
-        100% {
-          opacity: 0.3;
-        }
-        50% {
-          opacity: 1;
-        }
-      }
-
-      section {
-        padding: 120px 60px;
-        position: relative;
-      }
-      .section-tag {
-        margin-bottom: 24px;
-      }
-      .section-title {
-        font-family: "Playfair Display", serif;
-        font-size: clamp(40px, 5vw, 72px);
-        font-weight: 900;
-        line-height: 1;
-        letter-spacing: -0.02em;
-        color: var(--white);
-        margin-bottom: 20px;
-      }
-      .section-sub {
-        font-size: 15px;
-        color: var(--muted);
-        line-height: 1.7;
-        max-width: 500px;
-      }
-
-      #services {
-        background: var(--bg);
-      }
-      .services-layout {
-        display: grid;
-        grid-template-columns: 380px 1fr;
-        gap: 80px;
-        align-items: start;
-      }
-      .services-left {
-        position: sticky;
-        top: 120px;
-      }
-      .service-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 28px;
-      }
-      .stag {
-        padding: 6px 14px;
-        border: 1px solid var(--border);
-        font-size: 11px;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--muted);
-        border-radius: 2px;
-      }
-      .services-list {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-      }
-      .service-item {
-        padding: 32px 36px;
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.02);
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        gap: 24px;
-        align-items: start;
-        transition:
-          background 0.3s,
-          border-color 0.3s;
-      }
-      .service-item:hover {
-        background: rgba(255, 255, 255, 0.05);
-        border-color: rgba(255, 255, 255, 0.15);
-      }
-      .service-num {
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        color: var(--accent);
-        padding-top: 4px;
-      }
-      .service-name {
-        font-family: "Playfair Display", serif;
-        font-size: 22px;
-        font-weight: 700;
-        color: var(--white);
-        margin-bottom: 8px;
-      }
-      .service-desc {
-        font-size: 14px;
-        color: var(--muted);
-        line-height: 1.6;
-      }
-      .service-arrow {
-        font-size: 18px;
-        color: var(--muted);
-        transition:
-          color 0.3s,
-          transform 0.3s;
-        padding-top: 4px;
-      }
-      .service-item:hover .service-arrow {
-        color: var(--white);
-        transform: translate(4px, -4px);
-      }
-
-      #reviews {
-        background: var(--bg2);
-        border-top: 1px solid var(--border);
-        border-bottom: 1px solid var(--border);
-      }
-      .reviews-header {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        align-items: end;
-        margin-bottom: 72px;
-      }
-      .reviews-header-right {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 16px;
-      }
-      .reviews-header-right p {
-        font-size: 14px;
-        color: var(--muted);
-        text-align: right;
-        max-width: 320px;
-        line-height: 1.6;
-      }
-      .reviews-actions {
-        display: flex;
-        gap: 12px;
-      }
-      .reviews-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2px;
-      }
-      .review-card {
-        padding: 40px 36px;
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.02);
-        transition: background 0.3s;
-        position: relative;
-      }
-      .review-card:hover {
-        background: rgba(255, 255, 255, 0.04);
-      }
-      .review-quote {
-        font-family: "Playfair Display", serif;
-        font-size: 64px;
-        line-height: 1;
-        color: var(--navy-light);
-        margin-bottom: 24px;
-        display: block;
-      }
-      .review-text {
-        font-size: 15px;
-        line-height: 1.75;
-        color: var(--off-white);
-        margin-bottom: 32px;
-      }
-      .review-stars {
-        color: #f5c842;
-        font-size: 13px;
-        letter-spacing: 2px;
-        margin-bottom: 20px;
-      }
-      .review-author {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-      }
-      .avatar {
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        background: var(--navy);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 14px;
-        font-weight: 700;
-        color: var(--white);
-        border: 1px solid var(--border);
-        flex-shrink: 0;
-      }
-      .author-name {
-        font-size: 14px;
-        font-weight: 600;
-        color: var(--white);
-      }
-      .author-role {
+      .nav-center a {
         font-size: 12px;
-        color: var(--muted);
-        margin-top: 2px;
-      }
-      .stats-row {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        border: 1px solid var(--border);
-        margin-top: 2px;
-      }
-      .stat-block {
-        padding: 40px 36px;
-        border-right: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.01);
-      }
-      .stat-block:last-child {
-        border-right: none;
-      }
-      .stat-big {
-        font-family: "Playfair Display", serif;
-        font-size: 56px;
-        font-weight: 900;
-        color: var(--white);
-        line-height: 1;
-      }
-      .stat-desc {
-        font-size: 13px;
-        color: var(--muted);
-        margin-top: 8px;
-        letter-spacing: 0.05em;
-      }
-
-      #styles {
-        background: var(--bg);
-      }
-      .styles-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        margin-bottom: 60px;
-      }
-      .styles-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 340px 340px;
-        gap: 2px;
-      }
-      .style-card {
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--ink-soft);
+        transition: color 0.25s;
         position: relative;
-        overflow: hidden;
-        cursor: pointer;
       }
-      .style-card-bg {
-        position: absolute;
-        inset: 0;
-        transition: transform 0.6s ease;
-      }
-      .style-card:hover .style-card-bg {
-        transform: scale(1.04);
-      }
-      .style-card:nth-child(1) .style-card-bg {
-        background: linear-gradient(135deg, #0a1628 0%, #1b3759 100%);
-      }
-      .style-card:nth-child(2) .style-card-bg {
-  background-image: url("0528.gif");
-  background-size: cover;
-  background-position: center;
-}
-      .style-card:nth-child(3) .style-card-bg {
-        background: linear-gradient(135deg, #1a0d0d 0%, #3d1414 100%);
-      }
-     .style-card:nth-child(4) .style-card-bg {
-  background-image: url("0529.gif");
-  background-size: cover;
-  background-position: center;
-}
-      .style-card-bg::after {
+      .nav-center a::after {
         content: "";
         position: absolute;
-        inset: 0;
-        background-image:
-          repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 40px,
-            rgba(255, 255, 255, 0.02) 40px,
-            rgba(255, 255, 255, 0.02) 41px
-          ),
-          repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 40px,
-            rgba(255, 255, 255, 0.02) 40px,
-            rgba(255, 255, 255, 0.02) 41px
-          );
+        left: 0; bottom: -5px;
+        width: 0; height: 1px;
+        background: var(--ink);
+        transition: width 0.25s ease;
       }
-      .style-card-content {
-        position: absolute;
-        inset: 0;
-        padding: 36px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        background: linear-gradient(
-          to top,
-          rgba(0, 0, 0, 0.7) 0%,
-          transparent 60%
-        );
-      }
-      .style-tag {
-        font-size: 10px;
-        font-weight: 600;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--accent);
-        margin-bottom: 10px;
-      }
-      .style-name {
-        font-family: "Playfair Display", serif;
-        font-size: 28px;
-        font-weight: 700;
-        color: var(--white);
-        margin-bottom: 10px;
-        line-height: 1.1;
-      }
-      .style-desc {
-        font-size: 13px;
-        color: rgba(255, 255, 255, 0.6);
-        line-height: 1.6;
-        margin-bottom: 20px;
-      }
-      .style-link {
-        font-size: 12px;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--white);
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        opacity: 0;
-        transform: translateY(8px);
-        transition:
-          opacity 0.3s,
-          transform 0.3s;
-      }
-      .style-card:hover .style-link {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .style-link::after {
-        content: "->";
-      }
-
-      .style-modal {
-        position: fixed;
-        inset: 0;
-        z-index: 3000;
+      .nav-center a:hover { color: var(--ink); }
+      .nav-center a:hover::after { width: 100%; }
+      .nav-right { display: flex; align-items: center; gap: 16px; }
+      .nav-socials { display: flex; align-items: center; gap: 10px; }
+      .nav-social-link {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 28px;
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        transition:
-          opacity 0.18s ease,
-          visibility 0.18s ease;
+        color: #ffffff;
+        opacity: 0.88;
+        transition: opacity 0.25s, transform 0.2s ease;
+        text-decoration: none;
       }
-      .style-modal.active {
+      .nav-social-link.linkedin svg {
+        width: 30px;
+        height: 30px;
+      }
+      .nav-social-link.instagram svg {
+        width: 26px;
+        height: 26px;
+      }
+      .nav-social-link:hover {
         opacity: 1;
-        visibility: visible;
+        transform: scale(1.1);
+      }
+      .nav-cta {
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        text-decoration: none;
+        border: 1px solid var(--ink);
+        padding: 9px 20px;
+        border-radius: 100px;
+        color: var(--ink);
+        background: rgba(242, 246, 251, 0.05);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        transition: background 0.25s, color 0.25s, transform 0.15s, border-color 0.25s;
+      }
+      .nav-cta:hover { background: var(--ink); color: var(--paper); }
+      .nav-cta:active { transform: scale(0.96); }
+      .nav-burger-btn {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        height: 44px;
+        gap: 5px;
+        background: rgba(242, 246, 251, 0.08);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid var(--line);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background 0.25s, transform 0.2s;
+        z-index: 1010;
+      }
+      .nav-burger-btn:hover {
+        background: rgba(242, 246, 251, 0.16);
+      }
+      .burger-bar {
+        width: 18px;
+        height: 2px;
+        background: var(--ink);
+        border-radius: 2px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+      .nav-burger-btn.open .bar-top {
+        transform: translateY(3.5px) rotate(45deg);
+      }
+      .nav-burger-btn.open .bar-bot {
+        transform: translateY(-3.5px) rotate(-45deg);
+      }
+
+      /* Mobile Drawer Overlay */
+      .mobile-drawer {
+        position: fixed;
+        inset: 0;
+        z-index: 999;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.35s ease;
+      }
+      .mobile-drawer.active {
+        opacity: 1;
         pointer-events: auto;
       }
-      .style-modal-backdrop {
+      .mobile-drawer-backdrop {
         position: absolute;
         inset: 0;
-        background: rgba(3, 8, 14, 0.92);
+        background: rgba(8, 20, 32, 0.75);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
       }
-      .style-modal-window {
-        position: relative;
-        width: min(1100px, 100%);
-        max-height: 88vh;
+      .mobile-drawer-content {
+        position: absolute;
+        top: 0; right: 0; bottom: 0;
+        width: 300px;
+        max-width: 85vw;
+        background: rgba(13, 30, 48, 0.96);
+        border-left: 1px solid var(--line);
+        padding: 90px 28px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         overflow-y: auto;
-        background: #0b1420;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        padding: 42px;
-        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
-        transform: translateY(12px) scale(0.98);
-        transition: transform 0.18s ease;
-        will-change: transform;
+        transform: translateX(100%);
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
       }
-      .style-modal.active .style-modal-window {
-        transform: translateY(0) scale(1);
+      .mobile-drawer.active .mobile-drawer-content {
+        transform: translateX(0);
       }
-      .style-modal-close {
-        position: sticky;
-        top: 0;
-        float: right;
-        width: 42px;
-        height: 42px;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        background: rgba(255, 255, 255, 0.06);
-        color: var(--white);
-        font-size: 28px;
-        line-height: 1;
-        cursor: pointer;
-        z-index: 2;
-      }
-      .style-modal-title {
-        font-family: "Playfair Display", serif;
-        font-size: clamp(36px, 5vw, 64px);
-        line-height: 1;
-        margin-bottom: 16px;
-      }
-      .style-modal-desc {
-        max-width: 620px;
-        color: var(--muted);
-        font-size: 15px;
-        line-height: 1.7;
-      }
-      .video-library {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 18px;
-        margin-top: 36px;
-      }
-      .video-card {
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.03);
-      }
-      .video-card video,
-      .video-card iframe {
-        display: block;
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        border: 0;
-        background: #000;
-      }
-      .video-caption {
-        padding: 14px 16px;
-        font-size: 12px;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--muted);
-      }
-
-      .contact-form {
+      .mobile-nav-links {
+        list-style: none;
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 22px;
       }
-      .form-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
+      .mobile-nav-links a {
+        font-family: "Fraunces", serif;
+        font-size: 24px;
+        font-weight: 500;
+        color: var(--ink);
+        text-decoration: none;
+        transition: color 0.2s;
       }
-      .form-group {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
+      .mobile-nav-links a:hover {
+        color: var(--red);
       }
-      .form-group label {
-        font-size: 10px;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: var(--muted);
-        padding: 0;
-        background: none;
-        border: none;
-      }
-      .form-group input,
-      .form-group select,
-      .form-group textarea {
-        padding: 14px 20px;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid var(--border);
-        color: var(--white);
-        font-family: "Syne", sans-serif;
-        font-size: 14px;
-        outline: none;
-        width: 100%;
-        border-radius: 2px;
-        box-sizing: border-box;
-        transition:
-          border-color 0.3s ease,
-          background 0.3s ease;
-      }
-      .form-group input:focus,
-      .form-group select:focus,
-      .form-group textarea:focus {
-        border-color: rgba(255, 255, 255, 0.3);
-        background: rgba(255, 255, 255, 0.06);
-      }
-      .form-group select {
-        appearance: none;
-        -webkit-appearance: none;
-        cursor: pointer;
-        color-scheme: dark;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: right 20px center;
-        background-size: 12px;
-        background-color: rgba(255, 255, 255, 0.04);
-      }
-      .form-group select option {
-        background-color: #0d1825;
-        color: #ffffff;
-      }
-      .form-submit {
-        margin-top: 32px;
-        padding: 20px 40px;
-        background: var(--white);
-        color: var(--bg);
-        font-family: "Syne", sans-serif;
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        border: none;
-        width: 100%;
-        cursor: pointer;
-      }
-      .form-group input::placeholder,
-      .form-group textarea::placeholder {
-        color: rgba(255, 255, 255, 0.2);
-      }
-
-      #contact {
-        background: var(--bg2);
-        border-top: 1px solid var(--border);
-      }
-      .contact-layout {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 100px;
-        align-items: start;
-      }
-      .contact-info {
+      .mobile-drawer-footer {
         display: flex;
         flex-direction: column;
         gap: 20px;
+        border-top: 1px solid var(--line);
+        padding-top: 20px;
       }
-      .contact-info-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 16px;
-        padding: 20px;
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.02);
-        border-radius: 2px;
-        transition: background 0.3s;
+      .mobile-cta {
+        display: block;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        text-decoration: none;
+        border: 1px solid var(--ink);
+        padding: 12px;
+        border-radius: 100px;
+        color: var(--paper);
+        background: var(--ink);
+        transition: background 0.25s, color 0.25s;
       }
-      .contact-info-item:hover {
-        background: rgba(255, 255, 255, 0.04);
+      .mobile-cta:hover {
+        background: transparent;
+        color: var(--ink);
       }
-      .ci-icon {
-        font-size: 18px;
-        width: 40px;
-        height: 40px;
+      .mobile-socials {
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 1px solid var(--border);
-        border-radius: 2px;
-        flex-shrink: 0;
-        background: rgba(255, 255, 255, 0.03);
-      }
-      .ci-label {
-        font-size: 10px;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: var(--muted);
-        margin-bottom: 4px;
-      }
-      .ci-val {
-        font-size: 14px;
-        color: var(--white);
-        font-weight: 500;
+        gap: 18px;
       }
 
-      #timeline {
-        background: var(--bg2);
-        border-top: 1px solid var(--border);
+      @media (max-width: 1100px) { 
+        nav { position: fixed !important; }
+        .nav-center, .nav-right { display: none !important; } 
+        .nav-burger-btn { display: flex; }
+        #home { padding-top: 130px; }
       }
-      .timeline-header {
+      @media (max-width: 1024px) {
+        nav { padding: 0 32px; height: 76px; }
+        nav.scrolled { padding: 0 32px; height: 66px; }
+        .logo-img { height: 50px; }
+        .nav-burger-btn { width: 44px; height: 44px; }
+      }
+      @media (max-width: 640px) {
+        nav { padding: 0 20px; height: 70px; }
+        nav.scrolled { padding: 0 20px; height: 60px; }
+        .logo-img { height: 44px; }
+        .nav-burger-btn { width: 40px; height: 40px; }
+      }
+      @media (max-width: 400px) {
+        nav { padding: 0 16px; height: 64px; }
+        nav.scrolled { padding: 0 16px; height: 56px; }
+        .logo-img { height: 40px; }
+        .nav-burger-btn { width: 38px; height: 38px; }
+      }
+
+      /* --- shared --- */
+      section { 
+        padding: 90px 0 70px; 
+        position: relative; 
+        scroll-margin-top: 95px; 
+      }
+      @media (max-width: 1100px) { 
+        section { 
+          padding: 70px 0 50px; 
+          scroll-margin-top: 85px; 
+        } 
+      }
+      @media (max-width: 600px) {
+        section {
+          padding: 60px 0 40px;
+          scroll-margin-top: 75px;
+        }
+      }
+
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid var(--line);
+        margin-bottom: 26px;
+      }
+      .eyebrow-label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        flex: 1;
+      }
+      .section-title {
+        font-family: "Fraunces", serif;
+        font-weight: 500;
+        font-size: clamp(34px, 4vw, 54px);
+        letter-spacing: -0.01em;
+        line-height: 1.05;
+        margin-bottom: 18px;
+      }
+      .section-sub {
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--ink-soft);
+        max-width: 480px;
+      }
+      .btn-fill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--ink);
+        color: var(--paper);
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        padding: 15px 26px;
+        border-radius: 100px;
+        border: 1px solid var(--ink);
+        transition: background 0.25s, color 0.25s, transform 0.15s;
+      }
+      .btn-fill:hover { background: transparent; color: var(--ink); }
+      .btn-fill:active { transform: scale(0.98); }
+      .btn-text {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        text-decoration: none;
+        color: var(--ink);
+        font-size: 13px;
+        font-weight: 500;
+        border-bottom: 1px solid var(--ink);
+        padding-bottom: 2px;
+      }
+      .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.7s ease, transform 0.7s ease; }
+      .reveal.visible { opacity: 1; transform: translateY(0); }
+      .reveal-delay-1.visible { transition-delay: 0.08s; }
+      .reveal-delay-2.visible { transition-delay: 0.16s; }
+      .reveal-delay-3.visible { transition-delay: 0.24s; }
+      .reveal-delay-4.visible { transition-delay: 0.32s; }
+
+      /* --- Hero --- */
+      #home {
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 100px;
+        padding-bottom: 60px;
+        scroll-margin-top: 0px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-video-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      .hero-video-bg video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        opacity: 0.33;
+        filter: saturate(1.1) brightness(0.85);
+      }
+      .hero-video-overlay {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 30% 50%, rgba(13, 30, 48, 0.35) 0%, rgba(13, 30, 48, 0.85) 100%),
+                    linear-gradient(to bottom, rgba(13, 30, 48, 0.5) 0%, transparent 25%, transparent 75%, var(--paper) 100%);
+      }
+      #home .wrap {
+        position: relative;
+        z-index: 1;
+        transform: translateX(-270px);
+      }
+      @media (max-width: 1440px) {
+        #home .wrap {
+          transform: translateX(-140px);
+        }
+      }
+      @media (max-width: 1100px) {
+        #home .wrap {
+          transform: translateX(-40px);
+        }
+      }
+      @media (max-width: 850px) {
+        #home .wrap {
+          transform: translateX(0);
+        }
+      }
+      .hero-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 11px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--red-deep);
+        margin-bottom: 30px;
+        line-height: 1;
+      }
+      .word-ticker-box {
+        display: inline-block;
+        height: 24px;
+        line-height: 24px;
+        min-width: 95px;
+        overflow: hidden;
+        position: relative;
+        vertical-align: middle;
+      }
+      .word-ticker-track {
+        display: block;
+        animation: wordTicker 11.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+      }
+      .word-ticker-track span {
+        display: block;
+        height: 24px;
+        line-height: 24px;
+        white-space: nowrap;
+      }
+      @keyframes wordTicker {
+        0%, 12% { transform: translateY(0); }
+        16.6%, 28.6% { transform: translateY(-24px); }
+        33.3%, 45.3% { transform: translateY(-48px); }
+        50%, 62% { transform: translateY(-72px); }
+        66.6%, 78.6% { transform: translateY(-96px); }
+        83.3%, 95.3% { transform: translateY(-120px); }
+        100% { transform: translateY(-144px); }
+      }
+      .rec-dot {
+        width: 9px; height: 9px;
+        border-radius: 50%;
+        background: var(--red);
+        flex-shrink: 0;
+        animation: pulse 2.4s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.35; }
+      }
+      .hero-headline {
+        font-family: "Fraunces", serif;
+        font-weight: 500;
+        font-size: clamp(46px, 7vw, 92px);
+        line-height: 0.98;
+        letter-spacing: -0.015em;
+        max-width: 920px;
+        margin-bottom: 34px;
+      }
+      .hero-headline em {
+        font-style: italic;
+        font-weight: 400;
+        color: var(--ink-soft);
+      }
+      .hero-sub-row {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 48px;
+        flex-wrap: wrap;
+        border-top: 1px solid var(--line);
+        padding-top: 32px;
+        margin-bottom: 70px;
+      }
+      .hero-desc { font-size: 16px; line-height: 1.65; color: var(--ink-soft); max-width: 380px; }
+      .hero-actions { display: flex; align-items: center; gap: 26px; }
+      .hero-stats { display: flex; gap: 0; }
+      .stat-item {
+        padding: 0 34px;
+        border-left: 1px solid var(--line);
+      }
+      .stat-item:first-child { padding-left: 0; border-left: none; }
+      .stat-num { font-family: "Fraunces", serif; font-size: 32px; font-weight: 500; }
+      .stat-label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10.5px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--mute);
+        margin-top: 6px;
+      }
+      @media (max-width: 700px) {
+        .hero-stats { flex-wrap: wrap; gap: 20px; }
+        .stat-item { padding: 0 20px 0 0; border-left: none; }
+      }
+
+      /* --- Services --- */
+      #services {
+        padding: 36px 0 24px;
+        scroll-margin-top: 50px;
+      }
+      #services .styles-header {
+        margin-bottom: 16px;
+      }
+      #services .section-foot {
+        margin-top: 20px;
+      }
+      #services .service-row {
+        padding: 15px 0;
+      }
+      @media (max-width: 1100px) {
+        #services {
+          padding: 30px 0 20px;
+          scroll-margin-top: 70px;
+        }
+        #services .styles-header {
+          margin-bottom: 14px;
+        }
+        #services .service-row {
+          padding: 14px 0;
+        }
+      }
+      @media (max-width: 600px) {
+        #services {
+          padding: 24px 0 16px;
+          scroll-margin-top: 65px;
+        }
+        #services .service-row {
+          padding: 12px 0;
+        }
+      }
+      .services-list { border-top: 1px solid var(--line); }
+      .service-row {
+        display: flex;
+        flex-direction: column;
+        padding: 24px 0;
+        border-bottom: 1px solid var(--line);
+        transition: background 0.3s ease, border-color 0.3s ease;
+        cursor: pointer;
+        outline: none;
+      }
+      .service-row:hover,
+      .service-row:focus-visible,
+      .service-row.active {
+        background: rgba(74, 143, 204, 0.05);
+      }
+      .service-main-row {
+        display: grid;
+        grid-template-columns: 60px 1.2fr 2fr 24px;
+        gap: 28px;
+        align-items: center;
+        width: 100%;
+      }
+      .service-num { font-family: "JetBrains Mono", monospace; font-size: 13px; color: var(--red-deep); font-weight: 500; }
+      .service-name { font-family: "Fraunces", serif; font-size: 22px; font-weight: 500; }
+      .service-desc {
+        font-size: 14.5px;
+        line-height: 1.6;
+        color: var(--ink-soft);
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+      .service-row:hover .service-desc,
+      .service-row:focus-visible .service-desc,
+      .service-row.active .service-desc {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .service-arrow {
+        font-size: 18px;
+        color: var(--mute);
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.35s ease;
+        justify-self: end;
+      }
+      .service-row:hover .service-arrow,
+      .service-row:focus-visible .service-arrow,
+      .service-row.active .service-arrow {
+        transform: rotate(45deg) scale(1.1);
+        color: var(--red);
+      }
+
+      /* Expanded area */
+      .service-expanded-wrap {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .service-row:hover .service-expanded-wrap,
+      .service-row:focus-visible .service-expanded-wrap,
+      .service-row.active .service-expanded-wrap {
+        grid-template-rows: 1fr;
+      }
+      .service-expanded-inner {
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 60px 1.2fr 2fr 24px;
+        gap: 28px;
+        align-items: center;
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity 0.35s ease 0.08s, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) 0.08s, padding 0.35s ease;
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
+      .service-row:hover .service-expanded-inner,
+      .service-row:focus-visible .service-expanded-inner,
+      .service-row.active .service-expanded-inner {
+        opacity: 1;
+        transform: translateY(0);
+        padding-top: 16px;
+        padding-bottom: 4px;
+      }
+      .service-visual {
+        grid-column: 2;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .service-visual svg {
+        width: 140px;
+        height: 76px;
+      }
+      .service-details {
+        grid-column: 3;
+      }
+      .service-expanded-text {
+        font-size: 14.5px;
+        line-height: 1.65;
+        color: var(--ink);
+        opacity: 0.92;
+      }
+
+      @media (max-width: 800px) {
+        .service-main-row { grid-template-columns: 44px 1fr; row-gap: 8px; }
+        .service-desc { grid-column: 2; }
+        .service-arrow { display: none; }
+        .service-expanded-inner {
+          grid-template-columns: 44px 1fr;
+          gap: 12px 16px;
+        }
+        .service-visual { grid-column: 2; justify-content: flex-start; }
+        .service-details { grid-column: 2; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .service-expanded-wrap,
+        .service-expanded-inner,
+        .service-arrow {
+          transition: none !important;
+        }
+      }
+      .section-foot { margin-top: 48px; }
+
+      /* --- Styles grid --- */
+      .styles-header, .services-header-row, .reviews-header, .timeline-header {
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        margin-bottom: 48px;
+        gap: 40px;
+        flex-wrap: wrap;
+        margin-bottom: 56px;
       }
-      .tl-preview {
-        width: 100%;
-        aspect-ratio: 16/6;
-        background: #000;
-        border: 1px solid var(--border);
-        border-radius: 2px;
-        overflow: hidden;
+      .styles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+      .style-card {
+        background: var(--paper);
+        padding: 40px;
+        cursor: pointer;
+        transition: background 0.25s;
+        outline: none;
+      }
+      .style-card:hover, .style-card:focus-visible { background: rgba(74, 143, 204, 0.08); }
+      .style-tag { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--red-deep); letter-spacing: 0.08em; margin-bottom: 18px; }
+      .style-name { font-family: "Fraunces", serif; font-size: 24px; font-weight: 500; margin-bottom: 12px; }
+      .style-desc { font-size: 14px; line-height: 1.6; color: var(--ink-soft); margin-bottom: 22px; max-width: 340px; }
+      .style-link { font-family: "JetBrains Mono", monospace; font-size: 11.5px; letter-spacing: 0.04em; text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
+      @media (max-width: 700px) { .styles-grid { grid-template-columns: 1fr; } }
+
+      /* --- Style modal --- */
+      .style-modal {
+        position: fixed; inset: 0; z-index: 2000;
+        display: flex; align-items: center; justify-content: center;
+        opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+        padding: 24px;
+      }
+      .style-modal.active { opacity: 1; pointer-events: auto; }
+      .style-modal-backdrop { position: absolute; inset: 0; background: rgba(12, 11, 10, 0.7); }
+      .style-modal-window {
         position: relative;
-        margin-bottom: 12px;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        max-width: 760px; width: 100%;
+        max-height: 84vh; overflow-y: auto;
+        padding: 44px;
+        transform: translateY(14px);
+        transition: transform 0.3s ease;
       }
-      .tl-preview-inner {
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, #0a1628 0%, #0d1e2e 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        gap: 10px;
+      .style-modal.active .style-modal-window { transform: translateY(0); }
+      .style-modal-close {
+        position: absolute; top: 20px; right: 20px;
+        width: 34px; height: 34px;
+        border: 1px solid var(--line);
+        background: none;
+        font-size: 18px;
+        cursor: pointer;
+        color: var(--ink);
       }
-      .tl-preview-label {
-        font-size: 10px;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--muted);
+      .style-modal-title { font-family: "Fraunces", serif; font-size: 30px; font-weight: 500; margin: 10px 0 12px; }
+      .style-modal-desc { color: var(--ink-soft); font-size: 14.5px; line-height: 1.6; max-width: 520px; margin-bottom: 30px; }
+      .video-library { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .video-card iframe, .video-card video { width: 100%; aspect-ratio: 16/9; border: 1px solid var(--line); background: #000; }
+      .video-placeholder {
+        width: 100%; aspect-ratio: 16/9;
+        border: 1px dashed var(--line);
+        display: flex; align-items: center; justify-content: center;
+        text-align: center; padding: 20px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11.5px; color: var(--mute);
       }
-      .tl-preview-time {
-        font-family: "Playfair Display", serif;
-        font-size: 28px;
-        color: var(--white);
-        letter-spacing: 0.05em;
-      }
-      .tl-preview-bar {
-        width: 80px;
-        height: 2px;
-        background: var(--accent);
-        opacity: 0.6;
-        animation: pulse 2s ease-in-out infinite;
-      }
-      @keyframes pulse {
-        0%,
-        100% {
-          opacity: 0.3;
-        }
-        50% {
-          opacity: 1;
-        }
-      }
-      .tl-shell {
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.01);
-        border-radius: 2px;
-        overflow: hidden;
-        user-select: none;
-      }
-      .tl-toolbar {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        padding: 10px 16px;
-        border-bottom: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.02);
-      }
-      .tl-btn {
-        width: 28px;
-        height: 28px;
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.03);
-        border-radius: 2px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 11px;
-        color: var(--muted);
-        cursor: default;
+      .video-caption { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--mute); margin-top: 8px; }
+      @media (max-width: 640px) { .video-library { grid-template-columns: 1fr; } .style-modal-window { padding: 28px; } }
+
+      /* --- Reviews --- */
+      .reviews-actions { display: flex; gap: 22px; align-items: center; margin-top: 14px; }
+      .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-bottom: 70px; }
+      .review-card { background: var(--paper); padding: 36px; display: flex; flex-direction: column; }
+      .review-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+      .review-quote { font-family: "Fraunces", serif; font-size: 46px; color: var(--line); line-height: 1; }
+      .review-rating { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--red-deep); }
+      .review-text { font-size: 14.5px; line-height: 1.7; color: var(--ink-soft); flex: 1; margin-bottom: 26px; }
+      .review-author { display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--line); padding-top: 18px; }
+      .avatar {
+        width: 34px; height: 34px;
+        border: 1px solid var(--ink);
+        display: flex; align-items: center; justify-content: center;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px; font-weight: 600;
         flex-shrink: 0;
       }
-      .tl-timecode {
-        font-family: monospace;
-        font-size: 13px;
-        color: var(--white);
-        letter-spacing: 0.08em;
-        margin-left: auto;
-        background: rgba(0, 0, 0, 0.3);
-        padding: 4px 10px;
-        border-radius: 2px;
-        border: 1px solid var(--border);
-      }
-      .tl-zoom-label {
-        font-size: 10px;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--muted);
-      }
-      .tl-body {
-        display: flex;
-      }
-      .tl-labels {
-        flex-shrink: 0;
-        width: 130px;
-        border-right: 1px solid var(--border);
-        background: rgba(0, 0, 0, 0.2);
-      }
-      .tl-label-row {
-        height: 44px;
-        display: flex;
-        align-items: center;
-        padding: 0 14px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-        gap: 8px;
-      }
-      .tl-label-row:last-child {
-        border-bottom: none;
-      }
-      .tl-label-dot {
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        flex-shrink: 0;
-      }
-      .tl-label-text {
-        font-size: 10px;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--muted);
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-      .tl-scroll {
-        flex: 1;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        cursor: grab;
-        position: relative;
-      }
-      .tl-scroll:active {
-        cursor: grabbing;
-      }
-      .tl-scroll::-webkit-scrollbar {
-        height: 6px;
-      }
-      .tl-scroll::-webkit-scrollbar-track {
-        background: rgba(255, 255, 255, 0.02);
-      }
-      .tl-scroll::-webkit-scrollbar-thumb {
-        background: var(--navy-light);
-        border-radius: 3px;
-      }
-      .tl-inner {
-        position: relative;
-      }
-      .tl-ruler {
-        height: 28px;
-        background: rgba(0, 0, 0, 0.3);
-        border-bottom: 1px solid var(--border);
-        position: relative;
-      }
-      .tl-ruler-mark {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding-left: 4px;
-      }
-      .tl-ruler-mark-line {
-        width: 1px;
-        height: 8px;
-        background: rgba(255, 255, 255, 0.15);
-        margin-top: 14px;
-      }
-      .tl-ruler-mark-line.major {
-        height: 14px;
-        background: rgba(255, 255, 255, 0.3);
-        margin-top: 8px;
-      }
-      .tl-ruler-label {
-        position: absolute;
-        top: 4px;
-        font-size: 9px;
-        color: rgba(255, 255, 255, 0.4);
-        letter-spacing: 0.05em;
-        white-space: nowrap;
-        margin-left: 4px;
-      }
-      .tl-tracks {
-        position: relative;
-      }
-      .tl-track-row {
-        height: 44px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-        position: relative;
-      }
-      .tl-track-row:last-child {
-        border-bottom: none;
-      }
-      .tl-clip {
-        position: absolute;
-        top: 6px;
-        bottom: 6px;
-        border-radius: 2px;
-        overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        display: flex;
-        align-items: center;
-        padding: 0 8px;
-        transition: filter 0.15s;
-      }
-      .tl-clip:hover {
-        filter: brightness(1.2);
-      }
-      .tl-clip-label {
-        font-size: 9px;
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.85);
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        pointer-events: none;
-      }
-      .tl-clip::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image: repeating-linear-gradient(
-          90deg,
-          transparent,
-          transparent 8px,
-          rgba(255, 255, 255, 0.04) 8px,
-          rgba(255, 255, 255, 0.04) 9px
-        );
-        pointer-events: none;
-      }
-      .tl-playhead {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        background: #fff;
-        pointer-events: none;
-        z-index: 10;
-      }
-      .tl-playhead::before {
-        content: "";
-        position: absolute;
-        top: -1px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 10px;
-        height: 10px;
-        background: #fff;
-        clip-path: polygon(50% 100%, 0 0, 100% 0);
-      }
-      .tl-hover-line {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 1px;
-        background: rgba(255, 255, 255, 0.2);
-        pointer-events: none;
-        z-index: 9;
-        display: none;
+      .author-name { font-family: "Fraunces", serif; font-size: 15px; font-weight: 500; }
+      .author-role { font-size: 12px; color: var(--mute); margin-top: 2px; }
+      .stats-row { display: flex; gap: 0; border-top: 1px solid var(--line); padding-top: 40px; }
+      .stat-block { flex: 1; padding: 0 40px; border-left: 1px solid var(--line); }
+      .stat-block:first-child { padding-left: 0; border-left: none; }
+      .stat-block:last-child { padding-right: 0; }
+      .stat-big { font-family: "Fraunces", serif; font-size: 40px; font-weight: 500; }
+      .stat-desc { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--mute); margin-top: 8px; }
+      @media (max-width: 800px) { 
+        .reviews-grid { grid-template-columns: 1fr; } 
+        .stats-row { flex-direction: column; gap: 24px; } 
+        .stat-block { border-left: none; padding: 0 0 20px 0; border-bottom: 1px solid var(--line); } 
+        .stat-block:last-child { border-bottom: none; padding-bottom: 0; }
       }
 
+      /* --- Timeline (screening room — inverted) --- */
+      #timeline { background: var(--dark); color: var(--ink); }
+      #timeline .eyebrow { border-bottom-color: var(--dark-line); }
+      #timeline .eyebrow-label { color: rgba(242,246,251,0.7); }
+      #timeline .eyebrow-tc { color: var(--dark-mute); }
+      #timeline .section-sub { color: var(--dark-mute); }
+      .tl-preview {
+        border: 1px solid var(--dark-line);
+        padding: 26px 30px;
+        margin-bottom: 22px;
+      }
+      .tl-preview-label { font-family: "JetBrains Mono", monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dark-mute); margin-bottom: 10px; }
+      .tl-preview-time { font-family: "JetBrains Mono", monospace; font-size: 26px; color: var(--ink); margin-bottom: 16px; }
+      .tl-preview-bar { height: 1px; background: var(--dark-line); }
+      .tl-shell { border: 1px solid var(--dark-line); }
+      .tl-toolbar { display: flex; align-items: center; gap: 14px; padding: 14px 18px; border-bottom: 1px solid var(--dark-line); }
+      .tl-btn { font-size: 13px; color: var(--dark-mute); cursor: default; }
+      .tl-zoom-label { font-family: "JetBrains Mono", monospace; font-size: 10.5px; color: var(--dark-mute); flex: 1; }
+      .tl-timecode { font-family: "JetBrains Mono", monospace; font-size: 12px; color: var(--red); }
+      .tl-body { display: flex; }
+      .tl-labels { width: 140px; flex-shrink: 0; border-right: 1px solid var(--dark-line); }
+      .tl-label-row { height: 40px; display: flex; align-items: center; gap: 8px; padding: 0 14px; border-bottom: 1px solid var(--dark-line); }
+      .tl-label-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+      .tl-label-text { font-family: "JetBrains Mono", monospace; font-size: 10.5px; color: var(--dark-mute); }
+      .tl-scroll { overflow-x: auto; overflow-y: hidden; cursor: grab; }
+      .tl-scroll::-webkit-scrollbar { height: 6px; }
+      .tl-scroll::-webkit-scrollbar-thumb { background: var(--dark-line); }
+      .tl-inner { position: relative; }
+      .tl-ruler { height: 28px; position: relative; border-bottom: 1px solid var(--dark-line); }
+      .tl-ruler-mark { position: absolute; top: 0; height: 100%; }
+      .tl-ruler-mark-line { width: 1px; height: 6px; background: var(--dark-line); margin-top: 0; }
+      .tl-ruler-mark-line.major { height: 10px; background: var(--dark-mute); }
+      .tl-ruler-label { font-family: "JetBrains Mono", monospace; font-size: 9px; color: var(--dark-mute); margin-top: 3px; transform: translateX(2px); white-space: nowrap; }
+      .tl-tracks { position: relative; }
+      .tl-track-row { height: 40px; position: relative; border-bottom: 1px solid var(--dark-line); }
+      .tl-clip { position: absolute; top: 4px; height: 32px; border-radius: 2px; display: flex; align-items: center; padding: 0 8px; overflow: hidden; }
+      .tl-clip-label { font-family: "JetBrains Mono", monospace; font-size: 9.5px; color: rgba(242,246,251,0.85); white-space: nowrap; }
+      .tl-playhead { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--red); z-index: 5; pointer-events: none; }
+      .tl-playhead::before { content: ""; position: absolute; top: -1px; left: -3px; width: 7px; height: 7px; background: var(--red); }
+      .tl-hover-line { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--dark-line); display: none; pointer-events: none; }
+
+      /* --- Contact --- */
+      .contact-layout { display: grid; grid-template-columns: 1fr 1.1fr; gap: 32px; align-items: stretch; }
+      .contact-card-box {
+        border: 1px solid rgba(242, 246, 251, 0.16);
+        border-radius: 10px;
+        padding: 40px;
+        background: rgba(13, 30, 48, 0.4);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+      }
+      .contact-info { margin-top: 36px; display: flex; flex-direction: column; gap: 20px; }
+      .form-box-title { font-family: "Fraunces", serif; font-size: 26px; font-weight: 500; margin-bottom: 6px; }
+      .form-box-sub { font-size: 14px; color: var(--ink-soft); margin-bottom: 28px; line-height: 1.5; }
+      .contact-info-item { border-bottom: 1px solid var(--line); padding-bottom: 16px; }
+      .contact-info-item:last-child { border-bottom: none; padding-bottom: 0; }
+      .ci-label { font-family: "JetBrains Mono", monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mute); margin-bottom: 6px; }
+      .ci-val { font-size: 15px; }
+      .ci-val a { text-decoration: none; border-bottom: 1px solid var(--line); }
+      .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+      .form-group { margin-bottom: 26px; }
+      .form-group label { display: block; font-family: "JetBrains Mono", monospace; font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mute); margin-bottom: 10px; }
+      .form-group input, .form-group select, .form-group textarea {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid var(--line);
+        background: transparent;
+        padding: 8px 0;
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        color: var(--ink);
+        outline: none;
+        transition: border-color 0.25s;
+      }
+      .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--ink); }
+      .form-group select option {
+        color: #111827;
+        background-color: #ffffff;
+      }
+      .form-group select option[disabled] {
+        color: #6b7280;
+      }
+      .form-group textarea { resize: vertical; }
+      .form-submit {
+        border: 1px solid var(--ink);
+        background: var(--ink);
+        color: var(--paper);
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 15px 30px;
+        border-radius: 100px;
+        cursor: pointer;
+        transition: background 0.25s, color 0.25s, transform 0.15s;
+      }
+      .form-submit:hover { background: transparent; color: var(--ink); }
+      .form-submit:active { transform: scale(0.98); }
+      .form-submit:disabled { cursor: default; opacity: 0.7; }
+      .form-error {
+        display: none;
+        font-size: 13px;
+        color: var(--red);
+        margin-top: -10px;
+        margin-bottom: 20px;
+      }
+      .form-error.visible { display: block; }
+      .form-group.invalid input,
+      .form-group.invalid textarea { border-color: var(--red); }
+      @media (max-width: 960px) { 
+        .contact-layout { grid-template-columns: 1fr; gap: 24px; } 
+        .contact-card-box { padding: 28px 22px; }
+        .form-row { grid-template-columns: 1fr; } 
+      }
+
+      /* --- Footer --- */
       footer {
-        padding: 40px 60px;
-        border-top: 1px solid var(--border);
+        background: var(--dark);
+        color: var(--ink);
+        padding: 40px 48px 34px;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background: var(--bg);
-      }
-      .footer-logo {
-        font-family: "Playfair Display", serif;
-        font-size: 18px;
-        font-weight: 700;
-        color: var(--white);
-      }
-      .footer-logo span {
-        color: var(--accent);
-      }
-      .footer-copy {
-        font-size: 12px;
-        color: var(--muted);
-        letter-spacing: 0.05em;
-      }
-      .footer-links {
-        display: flex;
+        flex-direction: column;
         gap: 28px;
       }
-      .footer-links a {
-        font-size: 12px;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--muted);
-        text-decoration: none;
-        transition: color 0.3s;
-      }
-      .footer-links a:hover {
-        color: var(--white);
-      }
-      a,
-      a:visited,
-      a:hover,
-      a:active {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      .btn-primary,
-      .btn-primary:visited,
-      .btn-primary:hover,
-      .btn-primary:active {
-        color: var(--bg);
-      }
-
-      .reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition:
-          opacity 0.7s ease,
-          transform 0.7s ease;
-      }
-      .reveal.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .reveal-delay-1 {
-        transition-delay: 0.1s;
-      }
-      .reveal-delay-2 {
-        transition-delay: 0.2s;
-      }
-      .reveal-delay-3 {
-        transition-delay: 0.3s;
-      }
-      .reveal-delay-4 {
-        transition-delay: 0.4s;
-      }
-      .reveal-delay-5 {
-        transition-delay: 0.5s;
-      }
-      @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      @media (max-width: 1024px) {
-        nav,
-        section,
-        footer {
-          padding-left: 32px;
-          padding-right: 32px;
-        }
-        #home {
-          padding: 0 32px 80px;
-        }
-        .hero-stats {
-          right: 32px;
-        }
-        .services-layout {
-          grid-template-columns: 1fr;
-        }
-        .services-left {
-          position: static;
-        }
-        .reviews-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-        .contact-layout {
-          grid-template-columns: 1fr;
-          gap: 60px;
-        }
-      }
-      @media (max-width: 768px) {
-        body {
-          cursor: auto;
-        }
-        .cursor,
-        .cursor-ring {
-          display: none !important;
-        }
-        nav {
-          padding: 20px 24px;
-        }
-        nav.scrolled {
-          padding: 14px 24px;
-        }
-        .nav-links {
-          display: none;
-        }
-        section {
-          padding: 80px 24px;
-        }
-        #home {
-          padding: 0 24px 80px;
-        }
-        .hero-stats {
-          display: none;
-        }
-        .hero-headline {
-          font-size: 48px;
-        }
-        .hero-sub-row {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-        .hero-actions {
-          flex-wrap: wrap;
-        }
-        .reviews-header {
-          grid-template-columns: 1fr;
-        }
-        .reviews-header-right {
-          align-items: flex-start;
-        }
-        .reviews-header-right p {
-          text-align: left;
-        }
-        .reviews-grid {
-          grid-template-columns: 1fr;
-        }
-        .stats-row {
-          grid-template-columns: 1fr;
-        }
-        .stat-block {
-          border-right: none;
-          border-bottom: 1px solid var(--border);
-        }
-        .styles-grid {
-          grid-template-columns: 1fr;
-          grid-template-rows: auto;
-        }
-        .style-card {
-          height: 280px;
-        }
-        .styles-header {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 20px;
-        }
-        .style-modal {
-          padding: 14px;
-        }
-        .style-modal-window {
-          padding: 28px 20px;
-        }
-        .video-library {
-          grid-template-columns: 1fr;
-        }
-        .form-row {
-          grid-template-columns: 1fr;
-        }
-        .timeline-header {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 20px;
-        }
-        .tl-labels {
-          width: 105px;
-        }
-        .tl-toolbar {
-          gap: 8px;
-          overflow-x: auto;
-        }
-        .tl-zoom-label {
-          display: none;
-        }
-        footer {
-          flex-direction: column;
-          gap: 20px;
-          text-align: center;
-        }
-        .footer-links {
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-      }
-      .btn-primary,
-      .btn-primary:visited,
-      .btn-primary:hover,
-      .btn-primary:active,
-      .form-submit {
-        color: #080f18 !important;
-      }
-
-      .btn-primary *,
-      .form-submit * {
-        color: #080f18 !important;
-      }
-/* 1. Force the GIF to stay entirely in the background */
-.video-background {
-    position: fixed; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh; 
-    z-index: -2; /* Pushes it behind the text */
-    overflow: hidden;
-
-    /* ADD THESE THREE LINES: This centers your scaled-down GIF on the screen */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* 2. Make the GIF stretch and fill the screen beautifully */
-.video-background img {
-    width: 80%;
-    height: 80%;
-    
-    /* ADD THIS LINE: Controls transparency (0.0 = invisible, 1.0 = solid) */
-    opacity: 0.3; 
-  
-    /* CHANGED: Swapped 'cover' to 'contain' so your 60% sized GIF doesn't get weirdly cropped */
-    object-fit: contain;
-}
-
-/* 3. Ensure your text container sits safely on top of the background */
-.hero-section, 
-.landing-page-container { 
-    position: relative;
-    z-index: 1; 
-}
+      .footer-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+      .footer-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+      .footer-logo img { height: 50px; width: auto; }
+      .footer-tc { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--dark-mute); }
+      .footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding-top: 24px; border-top: 1px solid var(--dark-line); font-size: 12px; color: var(--dark-mute); }
+      .footer-links { display: flex; gap: 22px; }
+      .footer-links a { text-decoration: none; color: var(--dark-mute); }
+      .footer-links a:hover { color: var(--ink); }
     </style>
   </head>
   <body>
-  
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-ring" id="cursorRing"></div>
-
-    <!-- Full Screen Landing Background GIF -->
-<div class="video-background">
-    <img src="haxisbgloop2.gif" alt="Cinematic Background Loop">
-</div>
-
     <nav id="navbar">
-      <a href="#home" class="nav-logo">Haxis<span>.</span>Media</a>
-      <ul class="nav-links">
+      <a href="#home" class="nav-logo" aria-label="Haxis Media Home">
+        <img src="logo.png" alt="Haxis Media Logo" class="logo-img" />
+      </a>
+      <ul class="nav-center">
         <li><a href="#home">Home</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#reviews">Reviews</a></li>
         <li><a href="#styles">Styles</a></li>
-        <li><a href="#contact" class="nav-cta">Get In Touch</a></li>
       </ul>
+      <div class="nav-right">
+        <div class="nav-socials">
+          <a href="https://www.linkedin.com/company/haxismedia/" target="_blank" rel="noopener noreferrer" class="nav-social-link linkedin" aria-label="Haxis Media LinkedIn">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+            </svg>
+          </a>
+          <a href="https://instagram.com/haxismedia" target="_blank" rel="noopener noreferrer" class="nav-social-link instagram" aria-label="Haxis Media Instagram">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+        </div>
+        <a href="#contact" class="nav-cta">Get in touch</a>
+      </div>
+
+      <button class="nav-burger-btn" id="burgerBtn" type="button" aria-label="Toggle menu">
+        <span class="burger-bar bar-top"></span>
+        <span class="burger-bar bar-bot"></span>
+      </button>
     </nav>
 
+    <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+      <div class="mobile-drawer-backdrop" id="drawerBackdrop"></div>
+      <div class="mobile-drawer-content">
+        <ul class="mobile-nav-links">
+          <li><a href="#home" class="mobile-link">Home</a></li>
+          <li><a href="#services" class="mobile-link">Services</a></li>
+          <li><a href="#reviews" class="mobile-link">Reviews</a></li>
+          <li><a href="#styles" class="mobile-link">Styles</a></li>
+        </ul>
+        <div class="mobile-drawer-footer">
+          <a href="#contact" class="mobile-cta mobile-link">Get in touch</a>
+          <div class="mobile-socials">
+            <a href="https://www.linkedin.com/company/haxismedia/" target="_blank" rel="noopener noreferrer" class="nav-social-link linkedin" aria-label="LinkedIn">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="#ffffff"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            </a>
+            <a href="https://instagram.com/haxismedia" target="_blank" rel="noopener noreferrer" class="nav-social-link instagram" aria-label="Instagram">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="#ffffff"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <section id="home">
-      <div class="hero-bg">
-        <div class="orb orb1"></div>
-        <div class="orb orb2"></div>
-        <div class="orb orb3"></div>
+      <!-- Background Looping Video -->
+      <div class="hero-video-bg">
+        <video autoplay loop muted playsinline preload="auto">
+          <source src="hero-video.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-video-overlay"></div>
       </div>
-      <div class="hero-stats">
-        <div class="stat-item">
-          <div class="stat-num">150+</div>
-          <div class="stat-label">Projects Delivered</div>
+
+      <div class="wrap">
+        <div class="hero-tag reveal">
+          <span class="rec-dot"></span>
+          <div class="word-ticker-box">
+            <div class="word-ticker-track">
+              <span>CUT</span>
+              <span>EDIT</span>
+              <span>MIX</span>
+              <span>POLISH</span>
+              <span>FINISH</span>
+              <span>DONE</span>
+              <span>CUT</span>
+            </div>
+          </div>
         </div>
-        <div class="stat-item">
-          <div class="stat-num">98%</div>
-          <div class="stat-label">Client Retention</div>
+        <h1 class="hero-headline reveal reveal-delay-1">
+          We turn raw footage<br />into <em>cinematic stories.</em>
+        </h1>
+        <div class="hero-sub-row reveal reveal-delay-2">
+          <p class="hero-desc">
+            Vision & execution. Helping brands and content creators through strategy, editing, and visual storytelling.
+          </p>
+          <div class="hero-actions">
+            <a href="#styles" class="btn-fill">View our work →</a>
+            <a href="#contact" class="btn-text">Get in touch</a>
+          </div>
         </div>
-        <div class="stat-item">
-          <div class="stat-num">5*</div>
-          <div class="stat-label">Average Rating</div>
+        <div class="hero-stats reveal reveal-delay-3">
+          <div class="stat-item">
+            <div class="stat-num">200+</div>
+            <div class="stat-label">Projects completed</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">98%</div>
+            <div class="stat-label">Client retention</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">5.0</div>
+            <div class="stat-label">Average rating</div>
+          </div>
         </div>
-      </div>
-      <div class="hero-tag">Not Just Another Video Editing Agency</div>
-      <h1 class="hero-headline">
-        We Turn Raw<br />Footage Into<br /><em>Cinematic Stories</em>
-      </h1>
-      <div class="hero-sub-row">
-        <p class="hero-desc">
-          Vision & Execution. Helping Brands & Content Creators through
-          strategy, content, and visual storytelling.
-        </p>
-        <div class="hero-actions">
-          <a href="#styles" class="btn-primary">View Our Work</a>
-          <a href="#contact" class="btn-ghost">Get In Touch</a>
-        </div>
-      </div>
-      <div class="scroll-hint">
-        <div class="scroll-line"></div>
-        Scroll
       </div>
     </section>
 
     <section id="services">
-      <div class="services-layout">
-        <div class="services-left reveal">
-          <div class="section-tag">What We Do</div>
-          <h2 class="section-title">Services</h2>
-          <p class="section-sub">
-            End-to-end video editing that makes brands stand out and audiences
-            stop scrolling.
-          </p>
-          <div class="service-tags">
-            <span class="stag">Cinematic</span
-            ><span class="stag">Short-Form</span
-            ><span class="stag">Color Grading</span
-            ><span class="stag">Brand Video</span
-            ><span class="stag">Music Video</span>
-          </div>
-          <a
-            href="#contact"
-            class="btn-primary"
-            style="display: inline-block; margin-top: 40px"
-            >Start a Project</a
-          >
+      <div class="wrap">
+        <div class="eyebrow reveal">
+          <span class="rec-dot" style="width:5px;height:5px;"></span>
+          <span class="eyebrow-label">What we do</span>
         </div>
-        <div class="services-list">
-          <div class="service-item reveal reveal-delay-1">
-            <div class="service-num">01</div>
-            <div>
-              <div class="service-name">Cinematic Editing</div>
-              <div class="service-desc">
-                Story-driven cuts designed to evoke emotion, paced with
-                precision for maximum impact on every frame.
-              </div>
-            </div>
-            <div class="service-arrow">↗</div>
-          </div>
-          <div class="service-item reveal reveal-delay-2">
-            <div class="service-num">02</div>
-            <div>
-              <div class="service-name">Short-Form Content</div>
-              <div class="service-desc">
-                Hook-driven Reels, TikToks, and Shorts that stop thumbs and
-                drive real engagement for your brand.
-              </div>
-            </div>
-            <div class="service-arrow">↗</div>
-          </div>
-          <div class="service-item reveal reveal-delay-3">
-            <div class="service-num">03</div>
-            <div>
-              <div class="service-name">Color Grading & Correction</div>
-              <div class="service-desc">
-                Professional color work that transforms flat footage into a
-                signature cinematic look that defines your style.
-              </div>
-            </div>
-            <div class="service-arrow">↗</div>
-          </div>
-          <div class="service-item reveal reveal-delay-4">
-            <div class="service-num">04</div>
-            <div>
-              <div class="service-name">Music Video Editing</div>
-              <div class="service-desc">
-                Beat-synced, visually explosive edits for artists and labels
-                that demand a cut as strong as the track.
-              </div>
-            </div>
-            <div class="service-arrow">↗</div>
-          </div>
-          <div class="service-item reveal reveal-delay-5">
-            <div class="service-num">05</div>
-            <div>
-              <div class="service-name">Brand & Corporate Video</div>
-              <div class="service-desc">
-                Polished, professional edits for campaigns, product launches,
-                and corporate storytelling that converts.
-              </div>
-            </div>
-            <div class="service-arrow">↗</div>
-          </div>
-          <div class="service-item reveal">
-            <div class="service-num">06</div>
-            <div>
-              <div class="service-name">Sound Design & Mix</div>
-              <div class="service-desc">
-                Immersive audio treatment - from foley to music layering - that
-                makes your visuals hit harder.
-              </div>
-            </div>
-            <div class="service-arrow">↗</div>
+        <div class="styles-header reveal reveal-delay-1">
+          <div>
+            <h2 class="section-title">Services</h2>
+            <p class="section-sub">A creative powerhouse for modern brands and creators.</p>
           </div>
         </div>
-      </div>
-    </section>
+        <div class="services-list reveal reveal-delay-2">
+          <!-- Service 01: Video -->
+          <div class="service-row" tabindex="0" role="button" aria-expanded="false" aria-label="Video service details">
+            <div class="service-main-row">
+              <div class="service-num mono">01</div>
+              <div class="service-name">Video</div>
+              <div class="service-desc">Editing for films, campaigns, social content, YouTube, and everything in between. We handle the cut, pacing, motion, color, and finishing.</div>
+              <div class="service-arrow" aria-hidden="true">↗</div>
+            </div>
+            <div class="service-expanded-wrap">
+              <div class="service-expanded-inner">
+                <div class="service-visual">
+                  <svg width="150" height="90" viewBox="0 0 150 90" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="5" y="10" width="140" height="70" rx="6" stroke="rgba(242, 246, 251, 0.25)" stroke-width="1.5" fill="rgba(13, 30, 48, 0.7)"/>
+                    <!-- Premiere Pro App Icon Badge (Pr) -->
+                    <rect x="12" y="16" width="18" height="18" rx="4" fill="#00005B" stroke="#9999FF" stroke-width="0.8"/>
+                    <text x="21" y="29" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#9999FF" text-anchor="middle">Pr</text>
+                    <!-- Timecode Ruler Track -->
+                    <line x1="36" y1="28" x2="138" y2="28" stroke="rgba(242, 246, 251, 0.2)" stroke-width="1"/>
+                    <line x1="42" y1="23" x2="42" y2="28" stroke="rgba(242, 246, 251, 0.4)" stroke-width="1"/>
+                    <line x1="58" y1="25" x2="58" y2="28" stroke="rgba(242, 246, 251, 0.4)" stroke-width="1"/>
+                    <line x1="74" y1="23" x2="74" y2="28" stroke="rgba(242, 246, 251, 0.4)" stroke-width="1"/>
+                    <line x1="90" y1="25" x2="90" y2="28" stroke="rgba(242, 246, 251, 0.4)" stroke-width="1"/>
+                    <line x1="106" y1="23" x2="106" y2="28" stroke="rgba(242, 246, 251, 0.4)" stroke-width="1"/>
+                    <line x1="122" y1="25" x2="122" y2="28" stroke="rgba(242, 246, 251, 0.4)" stroke-width="1"/>
+                    <!-- V2 Track (Graphics / Adjustment Layer) -->
+                    <rect x="52" y="32" width="40" height="11" rx="2" fill="rgba(180, 100, 255, 0.35)" stroke="rgba(180, 100, 255, 0.8)" stroke-width="1"/>
+                    <!-- V1 Track (Main Video Footage Clips & Cuts) -->
+                    <rect x="36" y="46" width="34" height="13" rx="2" fill="rgba(74, 143, 204, 0.35)" stroke="var(--red)" stroke-width="1"/>
+                    <rect x="72" y="46" width="48" height="13" rx="2" fill="rgba(74, 143, 204, 0.35)" stroke="var(--red)" stroke-width="1"/>
+                    <rect x="122" y="46" width="16" height="13" rx="2" fill="rgba(74, 143, 204, 0.2)" stroke="rgba(242, 246, 251, 0.3)" stroke-width="1"/>
+                    <!-- A1 Track (Audio Track) -->
+                    <rect x="36" y="62" width="84" height="11" rx="2" fill="rgba(0, 200, 150, 0.25)" stroke="rgba(0, 200, 150, 0.7)" stroke-width="1"/>
+                    <!-- Premiere Blue CTI Playhead Marker -->
+                    <line x1="82" y1="20" x2="82" y2="74" stroke="#4a8fcc" stroke-width="1.6"/>
+                    <polygon points="78,20 86,20 86,24 82,28 78,24" fill="#4a8fcc"/>
+                  </svg>
+                </div>
+                <div class="service-details">
+                  <p class="service-expanded-text">We turn raw footage into films with rhythm, intention, and personality. From branded films and campaigns to social edits and YouTube content, we handle the entire post-production process — from the first cut through motion, color, sound, and final delivery.</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <section id="reviews">
-      <div class="reviews-header">
-        <div class="reveal">
-          <div class="section-tag">Client Reviews</div>
-          <h2 class="section-title">What Clients Say</h2>
-        </div>
-        <div class="reviews-header-right reveal reveal-delay-2">
-          <p>
-            Real feedback from clients who trusted Haxis Media to elevate their
-            brand through video.
-          </p>
-          <div class="reviews-actions">
-            <a
-              href="#contact"
-              class="btn-ghost"
-              style="padding: 10px 24px; font-size: 12px"
-              >Book a Free Call</a
-            >
-            <a
-              href="#services"
-              class="btn-primary"
-              style="padding: 10px 24px; font-size: 12px"
-              >See Services</a
-            >
+          <!-- Service 02: Audio -->
+          <div class="service-row" tabindex="0" role="button" aria-expanded="false" aria-label="Audio service details">
+            <div class="service-main-row">
+              <div class="service-num mono">02</div>
+              <div class="service-name">Audio</div>
+              <div class="service-desc">Dialogue cleanup, sound design, mixing, music editing, and the small details that make a piece feel finished.</div>
+              <div class="service-arrow" aria-hidden="true">↗</div>
+            </div>
+            <div class="service-expanded-wrap">
+              <div class="service-expanded-inner">
+                <div class="service-visual">
+                  <svg width="150" height="90" viewBox="0 0 150 90" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="5" y="10" width="140" height="70" rx="6" stroke="rgba(242, 246, 251, 0.25)" stroke-width="1.5" fill="rgba(13, 30, 48, 0.6)"/>
+                    <line x1="25" y1="40" x2="25" y2="50" stroke="rgba(242, 246, 251, 0.4)" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="37" y1="32" x2="37" y2="58" stroke="rgba(242, 246, 251, 0.6)" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="49" y1="22" x2="49" y2="68" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round"/>
+                    <line x1="61" y1="35" x2="61" y2="55" stroke="rgba(242, 246, 251, 0.7)" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="73" y1="18" x2="73" y2="72" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round"/>
+                    <line x1="85" y1="28" x2="85" y2="62" stroke="rgba(242, 246, 251, 0.8)" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="97" y1="38" x2="97" y2="52" stroke="rgba(242, 246, 251, 0.5)" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="109" y1="26" x2="109" y2="64" stroke="var(--red)" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="121" y1="42" x2="121" y2="48" stroke="rgba(242, 246, 251, 0.3)" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="service-details">
+                  <p class="service-expanded-text">Great visuals deserve equally considered sound. We clean dialogue, shape sound design, edit music, mix, and polish the details that make a piece feel immersive, balanced, and complete.</p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="reviews-grid">
-        <div class="review-card reveal reveal-delay-1">
-          <span class="review-quote">"</span>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            I've worked with a few editors before and none of them actually got my style.
-            Haxis did on the first cut. The pacing, the color, top-notch transitions...
-            felt like they'd been editing my content for years.
-            My last video hit 200k views and I'm convinced the edit had everything to do with it.
-          </p>
-          <div class="review-author">
-            <div class="avatar">LC</div>
-            <div>
-              <div class="author-name">LoBi Cloud</div>
-              <div class="author-role">Real Estate Marketing and Automation</div>
+
+          <!-- Service 03: Brand & Design -->
+          <div class="service-row" tabindex="0" role="button" aria-expanded="false" aria-label="Brand and Design service details">
+            <div class="service-main-row">
+              <div class="service-num mono">03</div>
+              <div class="service-name">Brand & Design</div>
+              <div class="service-desc">Visual identities, graphics, campaign assets, thumbnails, presentations, and the design work that keeps a brand consistent.</div>
+              <div class="service-arrow" aria-hidden="true">↗</div>
+            </div>
+            <div class="service-expanded-wrap">
+              <div class="service-expanded-inner">
+                <div class="service-visual">
+                  <svg width="150" height="90" viewBox="0 0 150 90" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="5" y="10" width="140" height="70" rx="6" stroke="rgba(242, 246, 251, 0.25)" stroke-width="1.5" fill="rgba(13, 30, 48, 0.6)"/>
+                    <!-- Vector Bezier Curve & Pen Tool Anchors -->
+                    <path d="M 22 56 Q 48 18 75 45 T 128 32" stroke="var(--red)" stroke-width="1.8" fill="none"/>
+                    <line x1="48" y1="18" x2="62" y2="28" stroke="rgba(242, 246, 251, 0.4)" stroke-width="1" stroke-dasharray="2 2"/>
+                    <circle cx="48" cy="18" r="3" fill="var(--red)"/>
+                    <rect x="72" y="42" width="6" height="6" fill="#ffffff" stroke="var(--red)" stroke-width="1"/>
+                    <circle cx="128" cy="32" r="3" fill="var(--red)"/>
+                    <!-- Design Bounding Box & Transform Handles -->
+                    <rect x="36" y="26" width="78" height="38" stroke="rgba(242, 246, 251, 0.3)" stroke-width="1" stroke-dasharray="4 3"/>
+                    <rect x="33" y="23" width="6" height="6" fill="rgba(13, 30, 48, 0.9)" stroke="var(--red)" stroke-width="1"/>
+                    <rect x="111" y="23" width="6" height="6" fill="rgba(13, 30, 48, 0.9)" stroke="var(--red)" stroke-width="1"/>
+                    <rect x="33" y="61" width="6" height="6" fill="rgba(13, 30, 48, 0.9)" stroke="var(--red)" stroke-width="1"/>
+                    <rect x="111" y="61" width="6" height="6" fill="rgba(13, 30, 48, 0.9)" stroke="var(--red)" stroke-width="1"/>
+                    <!-- Color Swatches Row -->
+                    <circle cx="48" cy="72" r="3" fill="var(--red)"/>
+                    <circle cx="58" cy="72" r="3" fill="rgba(242, 246, 251, 0.8)"/>
+                    <circle cx="68" cy="72" r="3" fill="rgba(242, 246, 251, 0.3)"/>
+                  </svg>
+                </div>
+                <div class="service-details">
+                  <p class="service-expanded-text">We create visual systems that make brands recognizable and consistent. From identities and campaign graphics to thumbnails, presentations, and digital assets, every piece is designed to work together.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 04: Marketing & Campaigns -->
+          <div class="service-row" tabindex="0" role="button" aria-expanded="false" aria-label="Marketing and Campaigns service details">
+            <div class="service-main-row">
+              <div class="service-num mono">04</div>
+              <div class="service-name">Marketing & Campaigns</div>
+              <div class="service-desc">From the first idea to the final deliverables, we build creative for launches, campaigns, and ongoing marketing.</div>
+              <div class="service-arrow" aria-hidden="true">↗</div>
+            </div>
+            <div class="service-expanded-wrap">
+              <div class="service-expanded-inner">
+                <div class="service-visual">
+                  <svg width="150" height="90" viewBox="0 0 150 90" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="5" y="10" width="140" height="70" rx="6" stroke="rgba(242, 246, 251, 0.25)" stroke-width="1.5" fill="rgba(13, 30, 48, 0.6)"/>
+                    <!-- Tier 1: REACH -->
+                    <rect x="18" y="18" width="114" height="17" rx="4" fill="rgba(74, 143, 204, 0.12)" stroke="rgba(242, 246, 251, 0.4)" stroke-width="1"/>
+                    <text x="75" y="30" font-family="JetBrains Mono, monospace" font-size="9" font-weight="600" fill="rgba(242, 246, 251, 0.9)" text-anchor="middle">1. REACH</text>
+                    <!-- Tier 2: ENGAGE -->
+                    <rect x="32" y="39" width="86" height="17" rx="4" fill="rgba(74, 143, 204, 0.25)" stroke="var(--red)" stroke-width="1.2"/>
+                    <text x="75" y="51" font-family="JetBrains Mono, monospace" font-size="9" font-weight="600" fill="var(--red)" text-anchor="middle">2. ENGAGE</text>
+                    <!-- Tier 3: CONVERT -->
+                    <rect x="46" y="60" width="58" height="15" rx="7.5" fill="var(--red)"/>
+                    <text x="75" y="71" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" fill="#ffffff" text-anchor="middle">CONVERT</text>
+                  </svg>
+                </div>
+                <div class="service-details">
+                  <p class="service-expanded-text">We turn creative ideas into campaigns built to move. From the initial concept through production and final deliverables, we create launch assets and ongoing creative that keep brands relevant and consistent.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 05: Social -->
+          <div class="service-row" tabindex="0" role="button" aria-expanded="false" aria-label="Social service details">
+            <div class="service-main-row">
+              <div class="service-num mono">05</div>
+              <div class="service-name">Social</div>
+              <div class="service-desc">Planning, content creation, publishing, and day-to-day management for brands that want a consistent presence without living inside their content calendar.</div>
+              <div class="service-arrow" aria-hidden="true">↗</div>
+            </div>
+            <div class="service-expanded-wrap">
+              <div class="service-expanded-inner">
+                <div class="service-visual">
+                  <svg width="150" height="90" viewBox="0 0 150 90" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="5" y="10" width="140" height="70" rx="6" stroke="rgba(242, 246, 251, 0.25)" stroke-width="1.5" fill="rgba(13, 30, 48, 0.6)"/>
+                    <!-- Mobile Reel Card Frame -->
+                    <rect x="18" y="18" width="34" height="54" rx="6" stroke="var(--red)" stroke-width="1.5" fill="rgba(74, 143, 204, 0.1)"/>
+                    <circle cx="35" cy="42" r="8" stroke="var(--red)" stroke-width="1.4"/>
+                    <polygon points="33,38 33,46 40,42" fill="var(--red)"/>
+                    <!-- Floating Engagement Stat Badge -->
+                    <rect x="58" y="22" width="68" height="18" rx="9" fill="rgba(8, 20, 32, 0.85)" stroke="rgba(242, 246, 251, 0.25)" stroke-width="1"/>
+                    <path d="M 67 31 C 65 28 69 26 71 29 C 73 26 77 28 75 31 L 71 35 Z" fill="var(--red)"/>
+                    <line x1="80" y1="31" x2="114" y2="31" stroke="rgba(242, 246, 251, 0.7)" stroke-width="1.8" stroke-linecap="round"/>
+                    <!-- Floating Growth / Viral Trend Pulse -->
+                    <rect x="68" y="46" width="62" height="18" rx="9" fill="rgba(74, 143, 204, 0.15)" stroke="var(--red)" stroke-width="1"/>
+                    <polyline points="76,57 82,51 87,54 94,49 100,53 105,48" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    <circle cx="105" cy="48" r="2" fill="var(--red)"/>
+                  </svg>
+                </div>
+                <div class="service-details">
+                  <p class="service-expanded-text">We help brands stay present without sacrificing quality or strategy. From planning and content creation to publishing and ongoing management, we build social content designed for how people actually consume it.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 06: Copy -->
+          <div class="service-row" tabindex="0" role="button" aria-expanded="false" aria-label="Copy service details">
+            <div class="service-main-row">
+              <div class="service-num mono">06</div>
+              <div class="service-name">Copy</div>
+              <div class="service-desc">Scripts, captions, campaign concepts, website copy, and the words around your content. Clear, considered, and written for actual people.</div>
+              <div class="service-arrow" aria-hidden="true">↗</div>
+            </div>
+            <div class="service-expanded-wrap">
+              <div class="service-expanded-inner">
+                <div class="service-visual">
+                  <svg width="150" height="90" viewBox="0 0 150 90" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="5" y="10" width="140" height="70" rx="6" stroke="rgba(242, 246, 251, 0.25)" stroke-width="1.5" fill="rgba(13, 30, 48, 0.6)"/>
+                    <path d="M 35 32 Q 35 24 43 24 Q 49 24 49 32 Q 49 46 37 54 L 33 50 Q 42 43 43 36 L 35 36 Z" fill="var(--red)"/>
+                    <path d="M 55 32 Q 55 24 63 24 Q 69 24 69 32 Q 69 46 57 54 L 53 50 Q 62 43 63 36 L 55 36 Z" fill="var(--red)"/>
+                    <line x1="78" y1="30" x2="125" y2="30" stroke="rgba(242, 246, 251, 0.7)" stroke-width="1.8" stroke-linecap="round"/>
+                    <line x1="78" y1="42" x2="120" y2="42" stroke="rgba(242, 246, 251, 0.5)" stroke-width="1.8" stroke-linecap="round"/>
+                    <line x1="78" y1="54" x2="105" y2="54" stroke="rgba(242, 246, 251, 0.3)" stroke-width="1.8" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="service-details">
+                  <p class="service-expanded-text">Words should sound like they belong to the brand, not a template. We write scripts, captions, campaign concepts, website copy, and supporting messaging that is clear, considered, and built to connect.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="review-card reveal reveal-delay-2">
-          <span class="review-quote">"</span>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            We needed a product launch video that felt premium, Haxis delivered exactly that.
-            The whole process was smooth, excellent communication, they asked the right questions upfront,
-            sent a first draft that barely needed changes, and hit the deadline with two days to spare.
-            We've already booked them for our next campaign.
-          </p>
-          <div class="review-author">
-            <div class="avatar">OE</div>
-            <div>
-              <div class="author-name">@OpenEquity</div>
-              <div class="author-role">Open Equity With Thomas Cornwall</div>
-            </div>
-          </div>
-        </div>
-        <div class="review-card reveal reveal-delay-3">
-          <span class="review-quote">"</span>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            Every project Haxis touches looks extraordinary. They created a
-            blend of design and artistry that makes our products stand out on
-            every platform.
-          </p>
-          <div class="review-author">
-            <div class="avatar">JC</div>
-            <div>
-              <div class="author-name">Jona Carter</div>
-              <div class="author-role">Founder of Arolux</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="stats-row reveal">
-        <div class="stat-block">
-          <div class="stat-big">200+</div>
-          <div class="stat-desc">Projects completed</div>
-        </div>
-        <div class="stat-block">
-          <div class="stat-big">98%</div>
-          <div class="stat-desc">Client satisfaction rate</div>
-        </div>
-        <div class="stat-block">
-          <div class="stat-big">5+</div>
-          <div class="stat-desc">Years of experience</div>
+        <div class="section-foot reveal reveal-delay-3">
+          <a href="#contact" class="btn-fill">Start a project →</a>
         </div>
       </div>
     </section>
 
     <section id="styles">
-      <div class="styles-header">
-        <div class="reveal">
-          <div class="section-tag">Our Editing Styles</div>
-          <h2 class="section-title">We Master Every Style</h2>
+      <div class="wrap">
+        <div class="eyebrow reveal">
+          <span class="rec-dot" style="width:5px;height:5px;"></span>
+          <span class="eyebrow-label">Editing styles</span>
         </div>
-        <p class="section-sub reveal reveal-delay-2" style="max-width: 360px">
-          From slow cinematic narratives to fast-paced commercial cuts - we
-          speak every visual language.
-        </p>
-      </div>
-      <div class="styles-grid">
-        <div
-          class="style-card reveal reveal-delay-1"
-          data-style="cinematic"
-          tabindex="0"
-          role="button"
-          aria-label="Open Cinematic Narrative video library"
-        >
-          <div class="style-card-bg"></div>
-          <div class="style-card-content">
-            <div class="style-tag">Style 01</div>
+        <div class="styles-header reveal reveal-delay-1">
+          <div>
+            <h2 class="section-title">Mastering every style</h2>
+          </div>
+          <p class="section-sub">From cinematic storytelling to bold brand identities and sharp copy, turning ideas into work that gets noticed.</p>
+        </div>
+        <div class="styles-grid reveal reveal-delay-2">
+          <div class="style-card" data-style="cinematic" tabindex="0" role="button" aria-label="Open Cinematic Narrative video library">
+            <div class="style-tag mono">Style 01</div>
             <div class="style-name">Cinematic Narrative</div>
-            <div class="style-desc">
-              Deep, moody, slow-burn cuts that carry emotional weight through
-              every frame.
-            </div>
-            <a href="#" class="style-link">Watch Sample</a>
+            <div class="style-desc">Deep, moody, slow-burn cuts that carry emotional weight through every frame.</div>
+            <span class="style-link" aria-hidden="true">Watch sample →</span>
           </div>
-        </div>
-        <div
-          class="style-card reveal reveal-delay-2"
-          data-style="commercial"
-          tabindex="0"
-          role="button"
-          aria-label="Open Fast-Paced Commercial video library"
-        >
-          <div class="style-card-bg"></div>
-          <div class="style-card-content">
-            <div class="style-tag">Style 02</div>
+          <div class="style-card" data-style="commercial" tabindex="0" role="button" aria-label="Open Fast-Paced Commercial video library">
+            <div class="style-tag mono">Style 02</div>
             <div class="style-name">Fast-Paced Commercial</div>
-            <div class="style-desc">
-              High-energy, rapid transitions and punchy pacing that commands
-              attention.
-            </div>
-            <a href="#" class="style-link">Watch Sample</a>
+            <div class="style-desc">High-energy, rapid transitions and punchy pacing that commands attention.</div>
+            <span class="style-link" aria-hidden="true">Watch sample →</span>
           </div>
-        </div>
-        <div
-          class="style-card reveal reveal-delay-3"
-          data-style="reels"
-          tabindex="0"
-          role="button"
-          aria-label="Open Social Media Reels video library"
-        >
-          <div class="style-card-bg"></div>
-          <div class="style-card-content">
-            <div class="style-tag">Style 03</div>
+          <div class="style-card" data-style="reels" tabindex="0" role="button" aria-label="Open Social Media Reels video library">
+            <div class="style-tag mono">Style 03</div>
             <div class="style-name">Social Media Reels</div>
-            <div class="style-desc">
-              Hook-driven, trend-aware edits built to stop the scroll and
-              maximize reach.
-            </div>
-            <a href="#" class="style-link">Watch Sample</a>
+            <div class="style-desc">Hook-driven, trend-aware edits built to stop the scroll and maximize reach.</div>
+            <span class="style-link" aria-hidden="true">Watch sample →</span>
           </div>
-        </div>
-        <div
-          class="style-card reveal reveal-delay-4"
-          data-style="documentary"
-          tabindex="0"
-          role="button"
-          aria-label="Open Documentary Storytelling video library"
-        >
-          <div class="style-card-bg"></div>
-          <div class="style-card-content">
-            <div class="style-tag">Style 04</div>
+          <div class="style-card" data-style="documentary" tabindex="0" role="button" aria-label="Open Documentary Storytelling video library">
+            <div class="style-tag mono">Style 04</div>
             <div class="style-name">Documentary Storytelling</div>
-            <div class="style-desc">
-              Raw, emotional, character-driven narratives that feel authentic
-              and resonate deeply.
-            </div>
-            <a href="#" class="style-link">Watch Sample</a>
+            <div class="style-desc">Raw, emotional, character-driven narratives that feel authentic and resonate deeply.</div>
+            <span class="style-link" aria-hidden="true">Watch sample →</span>
           </div>
         </div>
       </div>
@@ -1838,262 +1426,329 @@
 
     <div class="style-modal" id="styleModal" aria-hidden="true">
       <div class="style-modal-backdrop" data-close-modal></div>
-      <div
-        class="style-modal-window"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="modalTitle"
-      >
-        <button
-          class="style-modal-close"
-          type="button"
-          data-close-modal
-          aria-label="Close style library"
-        >
-          ×
-        </button>
-        <div class="style-modal-header">
-          <div class="section-tag" id="modalTag">Style Library</div>
-          <h3 class="style-modal-title" id="modalTitle">Cinematic Narrative</h3>
-          <p class="style-modal-desc" id="modalDesc"></p>
-        </div>
+      <div class="style-modal-window" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="style-modal-close" type="button" data-close-modal aria-label="Close style library">×</button>
+        <div class="style-tag mono" id="modalTag">Style Library</div>
+        <h3 class="style-modal-title" id="modalTitle">Cinematic Narrative</h3>
+        <p class="style-modal-desc" id="modalDesc"></p>
         <div class="video-library" id="modalVideos"></div>
       </div>
     </div>
 
-    <section id="timeline">
-      <div class="timeline-header reveal">
-        <div>
-          <div class="section-tag">Our Workflow</div>
-          <h2 class="section-title">Inside The Edit</h2>
+    <section id="reviews">
+      <div class="wrap">
+        <div class="eyebrow reveal">
+          <span class="rec-dot" style="width:5px;height:5px;"></span>
+          <span class="eyebrow-label">Client reviews</span>
         </div>
-        <p class="section-sub reveal reveal-delay-2" style="max-width: 340px">
-          A look at how a typical Haxis Media project is structured - layer by
-          layer, from raw cut to final delivery.
-        </p>
-      </div>
-      <div class="tl-preview reveal reveal-delay-1">
-        <div class="tl-preview-inner">
-          <div class="tl-preview-label">Preview Monitor</div>
-          <div class="tl-preview-time" id="tlPreviewTime">00:00:00:00</div>
-          <div class="tl-preview-bar"></div>
-        </div>
-      </div>
-      <div class="tl-shell reveal reveal-delay-2">
-        <div class="tl-toolbar">
-          <div class="tl-btn">⏮</div>
-          <div class="tl-btn">▶</div>
-          <div class="tl-btn">⏭</div>
-          <div class="tl-btn">✂</div>
-          <div class="tl-btn">🔍</div>
-          <span class="tl-zoom-label">Scroll to scrub · Drag to pan</span>
-          <div class="tl-timecode" id="tlTimecode">00:00:00:00</div>
-        </div>
-        <div class="tl-body">
-          <div class="tl-labels">
-            <div
-              class="tl-label-row"
-              style="height: 28px; border-bottom: 1px solid var(--border)"
-            ></div>
-            <div class="tl-label-row">
-              <div class="tl-label-dot" style="background: #4a8fcc"></div>
-              <span class="tl-label-text">Video A</span>
-            </div>
-            <div class="tl-label-row">
-              <div class="tl-label-dot" style="background: #3a7abf"></div>
-              <span class="tl-label-text">Video B</span>
-            </div>
-            <div class="tl-label-row">
-              <div class="tl-label-dot" style="background: #2ecc8a"></div>
-              <span class="tl-label-text">Color Grade</span>
-            </div>
-            <div class="tl-label-row">
-              <div class="tl-label-dot" style="background: #e8a83a"></div>
-              <span class="tl-label-text">Titles / GFX</span>
-            </div>
-            <div class="tl-label-row">
-              <div class="tl-label-dot" style="background: #cc4a6a"></div>
-              <span class="tl-label-text">Music</span>
-            </div>
-            <div class="tl-label-row">
-              <div class="tl-label-dot" style="background: #9b6acc"></div>
-              <span class="tl-label-text">SFX / Foley</span>
-            </div>
-            <div class="tl-label-row">
-              <div class="tl-label-dot" style="background: #4acc9b"></div>
-              <span class="tl-label-text">Dialogue</span>
+        <div class="reviews-header reveal reveal-delay-1">
+          <h2 class="section-title">What clients say</h2>
+          <div>
+            <p class="section-sub">Real feedback from clients who trusted Haxis Media to elevate their brand through video.</p>
+            <div class="reviews-actions">
+              <a href="#contact" class="btn-text">Book a free call</a>
+              <a href="#services" class="btn-text">See services</a>
             </div>
           </div>
-          <div class="tl-scroll" id="tlScroll">
-            <div class="tl-inner" id="tlInner">
-              <div class="tl-ruler" id="tlRuler"></div>
-              <div class="tl-tracks" id="tlTracks"></div>
-              <div class="tl-playhead" id="tlPlayhead"></div>
-              <div class="tl-hover-line" id="tlHoverLine"></div>
+        </div>
+        <div class="reviews-grid reveal reveal-delay-2">
+          <div class="review-card">
+            <div class="review-top">
+              <span class="review-quote serif">"</span>
+              <span class="review-rating mono">5.0</span>
             </div>
+            <p class="review-text">I've worked with a few editors before and none of them actually got my style. Haxis did on the first cut. The pacing, the color, top-notch transitions. Felt like they'd been editing my content for years. My last video hit 200k views.</p>
+            <div class="review-author">
+              <div class="avatar mono">LC</div>
+              <div>
+                <div class="author-name">LoBi Cloud</div>
+                <div class="author-role">Real Estate Marketing & Automation</div>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-top">
+              <span class="review-quote serif">"</span>
+              <span class="review-rating mono">5.0</span>
+            </div>
+            <p class="review-text">We needed a product launch video that felt premium, Haxis delivered exactly that. Excellent communication, first draft barely needed changes, hit the deadline with two days to spare. Already booked for our next campaign.</p>
+            <div class="review-author">
+              <div class="avatar mono">OE</div>
+              <div>
+                <div class="author-name">@OpenEquity</div>
+                <div class="author-role">Open Equity with Thomas Cornwall</div>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-top">
+              <span class="review-quote serif">"</span>
+              <span class="review-rating mono">5.0</span>
+            </div>
+            <p class="review-text">Every project Haxis touches looks extraordinary. They created a blend of design and artistry that makes our products stand out on every platform.</p>
+            <div class="review-author">
+              <div class="avatar mono">JC</div>
+              <div>
+                <div class="author-name">Jona Carter</div>
+                <div class="author-role">Founder of Arolux</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="stats-row reveal reveal-delay-3">
+          <div class="stat-block">
+            <div class="stat-big">200+</div>
+            <div class="stat-desc">Projects completed</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-big">98%</div>
+            <div class="stat-desc">Client satisfaction rate</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-big">5+</div>
+            <div class="stat-desc">Years of experience</div>
           </div>
         </div>
       </div>
     </section>
 
+
+
     <section id="contact">
-      <div class="contact-layout">
-        <div class="contact-left reveal">
-          <div class="section-tag">Contact Us</div>
-          <h2 class="section-title">Let's Work Together</h2>
-          <p class="section-sub">
-            Tell us about your project. We'll get back within 24 hours.
-          </p>
-          <div class="contact-info" style="margin-top: 48px">
-            <div class="contact-info-item">
-              <div class="ci-icon">✉</div>
-              <div>
-                <div class="ci-label">Email</div>
+      <div class="wrap">
+        <div class="eyebrow reveal">
+          <span class="rec-dot" style="width:5px;height:5px;"></span>
+          <span class="eyebrow-label">Contact us</span>
+        </div>
+        <div class="contact-layout">
+          <div class="contact-card-box reveal reveal-delay-1">
+            <h2 class="section-title">Let's work together</h2>
+            <p class="section-sub">Tell us about your project. We'll get back within 24 hours.</p>
+            <div class="contact-info">
+              <div class="contact-info-item">
+                <div class="ci-label mono">Email</div>
                 <div class="ci-val">haxismedia@gmail.com</div>
               </div>
-            </div>
-            <div class="contact-info-item">
-              <div class="ci-icon">📍</div>
-              <div>
-                <div class="ci-label">Based In</div>
-                <div class="ci-val">Remote - Worldwide</div>
+              <div class="contact-info-item">
+                <div class="ci-label mono">Based in</div>
+                <div class="ci-val">Remote, worldwide</div>
               </div>
-            </div>
-            <div class="contact-info-item">
-              <div class="ci-icon">⏱</div>
-              <div>
-                <div class="ci-label">Response Time</div>
+              <div class="contact-info-item">
+                <div class="ci-label mono">Response time</div>
                 <div class="ci-val">Within 24 hours</div>
               </div>
-            </div>
-            <div class="contact-info-item">
-              <div class="ci-icon">◎</div>
-              <div>
-                <div class="ci-label">Follow Us</div>
+              <div class="contact-info-item">
+                <div class="ci-label mono">Follow us</div>
                 <div class="ci-val">
-                  <a href="https://instagram.com/yourpage" target="_blank"
-                    >Instagram</a
-                  >
-                  ·
-                  <a href="https://youtube.com/@yourchannel" target="_blank"
-                    >YouTube</a
-                  >
-                  ·
-                  <a
-                    href="https://www.linkedin.com/company/haxismedia"
-                    target="_blank"
-                    >LinkedIn</a
-                  >
+                  <a href="https://instagram.com/yourpage" target="_blank">Instagram</a> ·
+                  <a href="https://youtube.com/@yourchannel" target="_blank">YouTube</a> ·
+                  <a href="https://www.linkedin.com/company/haxismedia" target="_blank">LinkedIn</a>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="contact-form reveal reveal-delay-2">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Your Name</label
-              ><input type="text" id="name" placeholder="Alex Reynolds" />
+          <div class="contact-card-box reveal reveal-delay-2">
+            <h3 class="form-box-title">Send a Message</h3>
+            <p class="form-box-sub">Fill in your project details below and we'll reach back out.</p>
+            <div class="form-row">
+              <div class="form-group" id="nameGroup">
+                <label for="name">Your name</label>
+                <input type="text" id="name" placeholder="Alex Reynolds" />
+                <div class="form-error" id="nameError">Enter your name.</div>
+              </div>
+              <div class="form-group" id="emailGroup">
+                <label for="email">Email address</label>
+                <input type="email" id="email" placeholder="alexreynolds@gmail.com" />
+                <div class="form-error" id="emailError">Enter a valid email address.</div>
+              </div>
             </div>
             <div class="form-group">
-              <label for="email">Email Address</label
-              ><input type="email" id="email" placeholder="alexreynolds@gmail.com" />
+              <label for="type">Project type</label>
+              <select id="type">
+                <option value="" disabled selected>Select a service</option>
+                <option>Cinematic Editing</option>
+                <option>Short-Form / Reels</option>
+                <option>Music Video</option>
+                <option>Brand & Corporate</option>
+                <option>Color Grading</option>
+                <option>Other</option>
+              </select>
             </div>
+            <div class="form-group">
+              <label for="budget">Budget range</label>
+              <select id="budget">
+                <option value="" disabled selected>Select your budget</option>
+                <option>Under $500</option>
+                <option>$500 - $1,500</option>
+                <option>$1,500 - $5,000</option>
+                <option>$5,000+</option>
+              </select>
+            </div>
+            <div class="form-group" id="messageGroup">
+              <label for="message">Project details</label>
+              <textarea id="message" rows="5" placeholder="Tell us about your project, timeline, and vision..."></textarea>
+              <div class="form-error" id="messageError">Tell us a bit about your project.</div>
+            </div>
+            <button class="form-submit">Send message</button>
           </div>
-          <div class="form-group">
-            <label for="type">Project Type</label
-            ><select id="type">
-              <option value="" disabled selected>Select a service</option>
-              <option>Cinematic Editing</option>
-              <option>Short-Form / Reels</option>
-              <option>Music Video</option>
-              <option>Brand & Corporate</option>
-              <option>Color Grading</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="budget">Budget Range</label
-            ><select id="budget">
-              <option value="" disabled selected>Select your budget</option>
-              <option>Under $500</option>
-              <option>$500 - $1,500</option>
-              <option>$1,500 - $5,000</option>
-              <option>$5,000+</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">Project Details</label
-            ><textarea
-              id="message"
-              rows="5"
-              placeholder="Tell us about your project, timeline, and vision..."
-            ></textarea>
-          </div>
-          <button class="form-submit">Send Message</button>
         </div>
       </div>
     </section>
 
     <footer>
-      <div class="footer-logo">Haxis<span>.</span>Media</div>
-      <div class="footer-copy">© 2026 Haxis Media. All rights reserved.</div>
-      <div class="footer-links">
-        <a href="#home">Home</a><a href="#services">Services</a
-        ><a href="#reviews">Reviews</a><a href="#contact">Contact</a>
+      <div class="footer-top">
+        <a href="#home" class="footer-logo">
+          <img src="logo.png" alt="Haxis Media Logo" />
+        </a>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Haxis Media. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="#home">Home</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a>
+        </div>
       </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
     <script>
-      const cursor = document.getElementById("cursor");
-      const ring = document.getElementById("cursorRing");
-      const canUseCustomCursor =
-        window.matchMedia("(pointer: fine)").matches && window.innerWidth > 900;
-      let mx = 0,
-        my = 0,
-        rx = 0,
-        ry = 0;
-      if (cursor && ring && canUseCustomCursor) {
-        document.body.style.cursor = "none";
-        document.addEventListener(
-          "mousemove",
-          (e) => {
-            mx = e.clientX;
-            my = e.clientY;
-          },
-          { passive: true },
-        );
-        cursor.style.display = "block";
-        ring.style.display = "block";
-        function animateCursor() {
-          cursor.style.left = mx + "px";
-          cursor.style.top = my + "px";
-          rx += (mx - rx) * 0.12;
-          ry += (my - ry) * 0.12;
-          ring.style.left = rx + "px";
-          ring.style.top = ry + "px";
-          requestAnimationFrame(animateCursor);
-        }
-        animateCursor();
-      } else if (cursor && ring) {
-        cursor.style.display = "none";
-        ring.style.display = "none";
-      }
-
       const navbar = document.getElementById("navbar");
       let navScrollTicking = false;
+
+      // Initialize Lenis Smooth Scroll Engine (Mouse Wheel + Anchors)
+      let lenis = null;
+      if (typeof Lenis !== "undefined") {
+        lenis = new Lenis({
+          duration: 1.6,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          orientation: "vertical",
+          gestureOrientation: "vertical",
+          smoothWheel: true,
+          wheelMultiplier: 1.0,
+          touchMultiplier: 1.5,
+          infinite: false,
+        });
+
+        function raf(time) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+      }
+
+      // Mobile Navigation Drawer Toggle
+      const burgerBtn = document.getElementById("burgerBtn");
+      const mobileDrawer = document.getElementById("mobileDrawer");
+      const drawerBackdrop = document.getElementById("drawerBackdrop");
+
+      function toggleMobileDrawer(open) {
+        if (!mobileDrawer) return;
+        const isOpen = open !== undefined ? open : !mobileDrawer.classList.contains("active");
+        if (burgerBtn) burgerBtn.classList.toggle("open", isOpen);
+        mobileDrawer.classList.toggle("active", isOpen);
+        mobileDrawer.setAttribute("aria-hidden", String(!isOpen));
+        document.body.classList.toggle("modal-open", isOpen);
+        if (lenis) {
+          if (isOpen) lenis.stop();
+          else lenis.start();
+        }
+      }
+
+      if (burgerBtn) {
+        burgerBtn.addEventListener("click", () => toggleMobileDrawer());
+      }
+      if (drawerBackdrop) {
+        drawerBackdrop.addEventListener("click", () => toggleMobileDrawer(false));
+      }
+      document.querySelectorAll(".mobile-link").forEach((link) => {
+        link.addEventListener("click", () => toggleMobileDrawer(false));
+      });
+
       window.addEventListener(
         "scroll",
         () => {
           if (navScrollTicking) return;
           navScrollTicking = true;
           requestAnimationFrame(() => {
-            navbar.classList.toggle("scrolled", window.scrollY > 60);
+            navbar.classList.toggle("scrolled", window.scrollY > 40);
             navScrollTicking = false;
           });
         },
         { passive: true },
       );
+
+      // Eased Smooth Scroll Function Fallback
+      function smoothScrollTo(targetEl, duration = 1600) {
+        if (!targetEl) return;
+        const targetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset;
+        const scrollMargin = parseInt(window.getComputedStyle(targetEl).scrollMarginTop) || 0;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - scrollMargin - startPosition;
+        let startTime = null;
+
+        function easeInOutExpo(t) {
+          if (t === 0) return 0;
+          if (t === 1) return 1;
+          return t < 0.5 ? Math.pow(2, 20 * t - 10) / 2 : (2 - Math.pow(2, -20 * t + 10)) / 2;
+        }
+
+        function animation(currentTime) {
+          if (startTime === null) startTime = currentTime;
+          const timeElapsed = currentTime - startTime;
+          const progress = Math.min(timeElapsed / duration, 1);
+          const ease = easeInOutExpo(progress);
+
+          window.scrollTo(0, startPosition + distance * ease);
+
+          if (timeElapsed < duration) {
+            requestAnimationFrame(animation);
+          }
+        }
+
+        requestAnimationFrame(animation);
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+          const targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            const scrollMargin = parseInt(window.getComputedStyle(targetEl).scrollMarginTop) || 0;
+            if (lenis) {
+              lenis.scrollTo(targetEl, {
+                offset: -scrollMargin,
+                duration: 1.8,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+              });
+            } else {
+              smoothScrollTo(targetEl, 1600);
+            }
+          }
+        });
+      });
+
+      // Services Accordion Interaction (Tap / Click / Keyboard)
+      const serviceRows = document.querySelectorAll(".service-row");
+      serviceRows.forEach((row) => {
+        row.addEventListener("click", (e) => {
+          const isAlreadyActive = row.classList.contains("active");
+          serviceRows.forEach((r) => {
+            r.classList.remove("active");
+            r.setAttribute("aria-expanded", "false");
+          });
+          if (!isAlreadyActive) {
+            row.classList.add("active");
+            row.setAttribute("aria-expanded", "true");
+          }
+        });
+        row.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            row.click();
+          }
+        });
+      });
 
       const reveals = document.querySelectorAll(".reveal");
       const observer = new IntersectionObserver(
@@ -2112,16 +1767,8 @@
           title: "Cinematic Narrative",
           desc: "Moody, emotional edits with slower pacing, strong music choices, color grading, and story-first structure.",
           videos: [
-            {
-              title: "Cinematic Sample 01",
-              iframe:
-                '<iframe width="560" height="315" src="PASTE_YOUR_YOUTUBE_EMBED_LINK_HERE" title="Cinematic Sample 01" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-            },
-            {
-              title: "Cinematic Sample 02",
-              iframe:
-                '<iframe width="560" height="315" src="PASTE_YOUR_YOUTUBE_EMBED_LINK_HERE" title="Cinematic Sample 02" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-            },
+            { title: "Cinematic Sample 01", src: "PASTE_VIDEO_LINK_HERE" },
+            { title: "Cinematic Sample 02", src: "PASTE_VIDEO_LINK_HERE" },
           ],
         },
         commercial: {
@@ -2129,16 +1776,8 @@
           title: "Fast-Paced Commercial",
           desc: "Fast cuts, punchy rhythm, transitions, product focus, and high-energy pacing for ads and brand campaigns.",
           videos: [
-            {
-              title: "Commercial Sample 01",
-              iframe:
-                '<iframe width="560" height="315" src="https://www.youtube.com/embed/3zn-JLcYE1Q?si=xfqpyhrAEHXx2faq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-            },
-            {
-              title: "Commercial Sample 02",
-              iframe:
-                '<iframe width="560" height="315" src="PASTE_YOUR_YOUTUBE_EMBED_LINK_HERE" title="Commercial Sample 02" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-            },
+            { title: "Commercial Sample 01", src: "https://www.youtube.com/watch?v=3zn-JLcYE1Q" },
+            { title: "Commercial Sample 02", src: "PASTE_VIDEO_LINK_HERE" },
           ],
         },
         reels: {
@@ -2146,16 +1785,8 @@
           title: "Social Media Reels",
           desc: "Short-form edits made for retention: strong hooks, captions, zooms, sound effects, and scroll-stopping pacing.",
           videos: [
-            {
-              title: "Reels Sample 01",
-              iframe:
-                '<iframe width="560" height="315" src="PASTE_YOUR_YOUTUBE_EMBED_LINK_HERE" title="Reels Sample 01" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-            },
-            {
-              title: "Reels Sample 02",
-              iframe:
-                '<iframe width="458" height="815" src="https://www.youtube.com/embed/6m8ZotcTOAg" title="Devin Jatho Style Sample - Client" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-            },
+            { title: "Reels Sample 01", src: "PASTE_VIDEO_LINK_HERE" },
+            { title: "Reels Sample 02", src: "https://www.youtube.com/watch?v=6m8ZotcTOAg" },
           ],
         },
         documentary: {
@@ -2163,19 +1794,31 @@
           title: "Documentary Storytelling",
           desc: "Authentic, character-led edits with interviews, natural pacing, emotional structure, and cinematic support visuals.",
           videos: [
-            {
-              title: "Documentary Sample 01",
-              iframe:
-                '<iframe width="560" height="315" src="PASTE_YOUR_YOUTUBE_EMBED_LINK_HERE" title="Documentary Sample 01" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-            },
-            {
-              title: "Documentary Sample 02",
-              iframe:
-                '<iframe width="560" height="315" src="PASTE_YOUR_YOUTUBE_EMBED_LINK_HERE" title="Documentary Sample 02" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-            },
+            { title: "Documentary Sample 01", src: "PASTE_VIDEO_LINK_HERE" },
+            { title: "Documentary Sample 02", src: "PASTE_VIDEO_LINK_HERE" },
           ],
         },
       };
+
+      function buildVideoEmbed(src) {
+        if (!src || src === "PASTE_VIDEO_LINK_HERE") {
+          return '<div class="video-placeholder">Add a video link in the script</div>';
+        }
+
+        const gdrive = src.match(/drive\.google\.com\/(?:file\/d\/|open\?id=)([a-zA-Z0-9_-]+)/);
+        if (gdrive) {
+          const id = gdrive[1];
+          return `<iframe src="https://drive.google.com/file/d/${id}/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>`;
+        }
+
+        const yt = src.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/shorts\/)([a-zA-Z0-9_-]{6,})/);
+        if (yt) {
+          const id = yt[1];
+          return `<iframe src="https://www.youtube.com/embed/${id}" title="Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>`;
+        }
+
+        return `<video controls playsinline preload="metadata" src="${src}"></video>`;
+      }
 
       const styleModal = document.getElementById("styleModal");
       const modalTag = document.getElementById("modalTag");
@@ -2198,14 +1841,12 @@
         clearTimeout(videoRenderTimer);
         videoRenderTimer = setTimeout(() => {
           modalVideos.innerHTML = item.videos
-            .map(
-              (video) => `
+            .map((video) => `
         <div class="video-card">
-          ${video.iframe}
+          ${buildVideoEmbed(video.src)}
           <div class="video-caption">${video.title}</div>
         </div>
-      `,
-            )
+      `)
             .join("");
         }, 120);
       }
@@ -2223,19 +1864,13 @@
       }
 
       document.querySelectorAll(".style-card").forEach((card) => {
-        card.addEventListener("click", () =>
-          openStyleModal(card.dataset.style),
-        );
+        card.addEventListener("click", () => openStyleModal(card.dataset.style));
         card.addEventListener("keydown", (e) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
             openStyleModal(card.dataset.style);
           }
         });
-      });
-
-      document.querySelectorAll(".style-link").forEach((link) => {
-        link.addEventListener("click", (e) => e.preventDefault());
       });
 
       document.querySelectorAll("[data-close-modal]").forEach((btn) => {
@@ -2246,72 +1881,81 @@
         if (e.key === "Escape") closeStyleModal();
       });
 
-      document
-        .querySelector(".form-submit")
-        .addEventListener("click", async function () {
-          const name = document.getElementById("name").value.trim();
-          const email = document.getElementById("email").value.trim();
-          const type = document.getElementById("type").value;
-          const budget = document.getElementById("budget").value;
-          const message = document.getElementById("message").value.trim();
+      const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-          if (!name || !email || !message) {
-            alert("Please fill in your name, email, and project details.");
-            return;
-          }
+      function setFieldError(groupId, hasError) {
+        const group = document.getElementById(groupId);
+        group.classList.toggle("invalid", hasError);
+        const error = group.querySelector(".form-error");
+        if (error) error.classList.toggle("visible", hasError);
+      }
 
-          const btn = this;
-          btn.textContent = "Sending...";
-          btn.disabled = true;
+      function validateContactForm() {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
 
-          try {
-            const res = await fetch("https://formspree.io/f/mvzljbjj", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-              },
-              body: JSON.stringify({ name, email, type, budget, message }),
-            });
+        const nameValid = name.length > 0;
+        const emailValid = EMAIL_RE.test(email);
+        const messageValid = message.length > 0;
 
-            if (res.ok) {
-              btn.textContent = "Message Sent ✓";
-              btn.style.background = "#1B3759";
-              btn.style.color = "#fff";
-              document.getElementById("name").value = "";
-              document.getElementById("email").value = "";
-              document.getElementById("type").value = "";
-              document.getElementById("budget").value = "";
-              document.getElementById("message").value = "";
-              setTimeout(() => {
-                btn.textContent = "Send Message";
-                btn.style.background = "";
-                btn.style.color = "";
-                btn.disabled = false;
-              }, 4000);
-            } else {
-              btn.textContent = "Failed - Try Again";
-              btn.style.background = "#8B0000";
-              btn.style.color = "#fff";
-              btn.disabled = false;
-              setTimeout(() => {
-                btn.textContent = "Send Message";
-                btn.style.background = "";
-                btn.style.color = "";
-              }, 3000);
-            }
-          } catch (err) {
-            btn.textContent = "Error - Try Again";
-            btn.style.background = "#8B0000";
-            btn.style.color = "#fff";
-            btn.disabled = false;
-            setTimeout(() => {
-              btn.textContent = "Send Message";
-              btn.style.background = "";
-              btn.style.color = "";
-            }, 3000);
-          }
+        setFieldError("nameGroup", !nameValid);
+        setFieldError("emailGroup", !emailValid);
+        setFieldError("messageGroup", !messageValid);
+
+        return nameValid && emailValid && messageValid;
+      }
+
+      ["name", "email", "message"].forEach((id) => {
+        document.getElementById(id).addEventListener("input", () => {
+          const groupId = id + "Group";
+          const group = document.getElementById(groupId);
+          if (group.classList.contains("invalid")) validateContactForm();
         });
+      });
+
+      document.querySelector(".form-submit").addEventListener("click", async function () {
+        if (!validateContactForm()) return;
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const type = document.getElementById("type").value;
+        const budget = document.getElementById("budget").value;
+        const message = document.getElementById("message").value.trim();
+
+        const btn = this;
+        btn.textContent = "Sending...";
+        btn.disabled = true;
+
+        try {
+          const res = await fetch("https://formspree.io/f/xppzzqov", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            body: JSON.stringify({ name, email, type, budget, message }),
+          });
+
+          if (res.ok) {
+            btn.textContent = "Message sent ✓";
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("type").value = "";
+            document.getElementById("budget").value = "";
+            document.getElementById("message").value = "";
+            setTimeout(() => {
+              btn.textContent = "Send message";
+              btn.disabled = false;
+            }, 4000);
+          } else {
+            btn.textContent = "Failed. Try again.";
+            btn.disabled = false;
+            setTimeout(() => { btn.textContent = "Send message"; }, 3000);
+          }
+        } catch (err) {
+          btn.textContent = "Error. Try again.";
+          btn.disabled = false;
+          setTimeout(() => { btn.textContent = "Send message"; }, 3000);
+        }
+      });
 
       (function () {
         const PX_PER_SEC = 80;
@@ -2356,51 +2000,13 @@
         }
 
         const trackData = [
-          {
-            color: "#1c4a7a",
-            clips: [
-              [0, 22, "Opening Cut"],
-              [23, 18, "Interview A"],
-              [44, 26, "B-Roll Sequence"],
-              [72, 18, "Closing Shot"],
-            ],
-          },
-          {
-            color: "#163d6e",
-            clips: [
-              [5, 15, "Cutaway 1"],
-              [38, 12, "Insert B"],
-              [55, 20, "B-Roll Alt"],
-            ],
-          },
-          { color: "#1a6644", clips: [[0, 90, "Color Grade"]] },
-          {
-            color: "#7a5a10",
-            clips: [
-              [2, 8, "Intro Title"],
-              [30, 6, "Lower Third"],
-              [60, 10, "End Card"],
-            ],
-          },
-          { color: "#7a1a30", clips: [[0, 90, "Soundtrack"]] },
-          {
-            color: "#4a2880",
-            clips: [
-              [4, 3, "Hit"],
-              [22, 2, "Whoosh"],
-              [44, 3, "Transition"],
-              [72, 4, "Impact"],
-            ],
-          },
-          {
-            color: "#106644",
-            clips: [
-              [1, 21, "Speaker A"],
-              [23, 17, "Speaker B"],
-              [44, 25, "Speaker A"],
-              [71, 18, "Speaker B"],
-            ],
-          },
+          { color: "#3d3a35", clips: [[0, 22, "Opening Cut"], [23, 18, "Interview A"], [44, 26, "B-Roll Sequence"], [72, 18, "Closing Shot"]] },
+          { color: "#2a2823", clips: [[5, 15, "Cutaway 1"], [38, 12, "Insert B"], [55, 20, "B-Roll Alt"]] },
+          { color: "#8a1519", clips: [[0, 90, "Color Grade"]] },
+          { color: "#3d3a35", clips: [[2, 8, "Intro Title"], [30, 6, "Lower Third"], [60, 10, "End Card"]] },
+          { color: "#2a2823", clips: [[0, 90, "Soundtrack"]] },
+          { color: "#3d3a35", clips: [[4, 3, "Hit"], [22, 2, "Whoosh"], [44, 3, "Transition"], [72, 4, "Impact"]] },
+          { color: "#2a2823", clips: [[1, 21, "Speaker A"], [23, 17, "Speaker B"], [44, 25, "Speaker A"], [71, 18, "Speaker B"]] },
         ];
 
         trackData.forEach((td) => {
@@ -2432,8 +2038,7 @@
 
         updatePlayhead(0);
         scroll.addEventListener("scroll", () => {
-          const ratio =
-            scroll.scrollLeft / Math.max(1, totalPx - scroll.clientWidth);
+          const ratio = scroll.scrollLeft / Math.max(1, totalPx - scroll.clientWidth);
           updatePlayhead(ratio * TOTAL_SECS);
         });
         scroll.addEventListener("mousemove", (e) => {
@@ -2442,9 +2047,7 @@
           hoverLine.style.left = x + "px";
           hoverLine.style.display = "block";
         });
-        scroll.addEventListener("mouseleave", () => {
-          hoverLine.style.display = "none";
-        });
+        scroll.addEventListener("mouseleave", () => { hoverLine.style.display = "none"; });
         scroll.addEventListener("click", (e) => {
           const rect = scroll.getBoundingClientRect();
           const x = e.clientX - rect.left + scroll.scrollLeft;
@@ -2452,9 +2055,7 @@
           scroll.scrollLeft = Math.max(0, x - scroll.clientWidth / 2);
         });
 
-        let isDragging = false,
-          startX,
-          startScrollLeft;
+        let isDragging = false, startX, startScrollLeft;
         scroll.addEventListener("mousedown", (e) => {
           isDragging = true;
           startX = e.pageX - scroll.offsetLeft;

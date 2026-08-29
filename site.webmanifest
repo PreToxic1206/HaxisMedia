@@ -1,0 +1,24 @@
+{
+  "name": "Haxis Media | Video Editing Studio",
+  "short_name": "Haxis Media",
+  "description": "Haxis Media is a video editing studio for brands and creators, offering cinematic editing, short-form content, color grading, music videos, and sound design.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d1e30",
+  "theme_color": "#0d1e30",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
